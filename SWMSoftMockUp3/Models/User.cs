@@ -1,7 +1,7 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
-namespace SWMSoftMockUp3.ViewModels
+namespace SWMSoftMockUp3.Models
 {
     public class User
     {

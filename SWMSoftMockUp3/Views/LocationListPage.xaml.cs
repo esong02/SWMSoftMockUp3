@@ -7,9 +7,10 @@ namespace SWMSoftMockUp3.Views
 {
     public partial class LocationListPage : ContentPage
     {
-        public LocationListPage()
+        public LocationListPage(string userName)
         {
             InitializeComponent();
+            Title = userName;
         }
     }
 }
