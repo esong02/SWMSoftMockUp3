@@ -2,8 +2,119 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="User A"
+    xmlns:viewModel="clr-namespace:SWMSoftMockUp3.ViewModels;assembly=SWMSoftMockUp3"
+    Title="Logout"
     x:Class="SWMSoftMockUp3.Views.LocationListPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
+    
+	<ContentPage.BindingContext >
+        <viewModel:AssetLocationVM />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                BackgroundColor = "Blue"
+                x:Name="AssetLocationList"
+                HasUnevenRows="false"
+                SeparatorVisibility = "Default"
+                RowHeight="150">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                BackgroundColor = "White"
+                                HorizontalOptions = "FillAndExpand"
+                                Margin = "15,5,15,5"
+                                Padding = "5,5,5,5">
+                                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height = "*" />
+                                    <RowDefinition Height = "*" />
+                                </Grid.RowDefinitions>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width = "*" />
+                                    <ColumnDefinition Width = "*" />
+                                    <ColumnDefinition Width = "*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label 
+                                    Text = "{Binding address}"
+                                    TextColor = "Black"
+                                    LineBreakMode = "WordWrap"
+                                    Margin = "5,5,0,0"
+                                    FontSize = "16"
+                                    Grid.Row = "0"
+                                    Grid.Column = "0"
+                                    Grid.ColumnSpan = "2" />
+                                
+                                <Image
+                                    Source = "location_icon1.png"
+                                    Margin = "25,5,25,5"
+                                    Aspect = "Fill" 
+                                    Grid.Row = "0"
+                                    Grid.Column = "2" />
+                                
+                                <Label
+                                    Text = "Inspection Type: "
+                                    LineBreakMode = "WordWrap"
+                                    VerticalOptions = "CenterAndExpand"
+                                    Margin = "5,0,0,0"
+                                    TextColor = "Black"
+                                    Grid.Row = "1"
+                                    Grid.Column = "0" />
+                                
+                                <Button
+                                    Text = "{Binding inspectionType}"
+                                    TextColor = "Black"
+                                    Margin = "0,8,0,8"
+                                    BackgroundColor = "Gray"
+                                    Clicked = "InspectionType_Clicked"
+                                    Grid.Row = "1"
+                                    Grid.Column = "1"
+                                    Grid.ColumnSpan = "2"/>
+                                
+                            </Grid>
+                            
+                            
+                            <!--StackLayout
+                                BackgroundColor = "White"
+                                Margin = "20,10,20,10">
+                            
+                                <Label 
+                                    Text = "{Binding address}"
+                                    TextColor = "Black"
+                                    HorizontalOptions = "FillAndExpand"
+                                    VerticalOptions = "Start"/>
+
+                                <Image
+                                    Source = "location_icon1.png"
+                                    VerticalOptions = "Start"
+                                    HorizontalOptions = "End"
+                                    WidthRequest = "50"
+                                    HeightRequest = "50"
+                                    Aspect = "Fill" />
+                                    
+                                <Label
+                                    Text = "Inspection Type:: "
+                                    TextColor = "Black"
+                                    HorizontalOptions = "Start"
+                                    VerticalOptions = "End" />
+                                
+                                <Button
+                                    Text = "{Binding inspectionType}"
+                                    TextColor = "Black"
+                                    HorizontalOptions = "End"
+                                    VerticalOptions = "End"
+                                    BackgroundColor = "Gray" />
+
+                            </StackLayout-->
+                        </ViewCell>   
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+    
 </ContentPage>

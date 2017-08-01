@@ -13,7 +13,7 @@
         <StackLayout
             x:Name="LoginBox"
             Orientation="Vertical"
-            Margin="20,30,20,30"
+            Margin="40,30,40,30"
             VerticalOptions="FillAndExpand"
             HorizontalOptions="FillAndExpand"
             BackgroundColor="White" >
