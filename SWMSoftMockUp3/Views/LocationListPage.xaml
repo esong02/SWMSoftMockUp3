@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewModel="clr-namespace:SWMSoftMockUp3.ViewModels;assembly=SWMSoftMockUp3"
+    xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
     Title="Logout"
     x:Class="SWMSoftMockUp3.Views.LocationListPage">
     
@@ -11,12 +12,26 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
+        
+        <StackLayout
+            BackgroundColor = "Blue">
+
+            <Label 
+                Text = "Inspection Areas"
+                TextColor = "White"
+                BackgroundColor = "Transparent"
+                FontSize = "20"
+                Margin = "20,20,0,0"
+                FontAttributes = "Bold"
+                HorizontalOptions = "Start" />
+            
             <ListView
-                BackgroundColor = "Blue"
+                Margin = "0,20,0,0"
+                BackgroundColor = "Transparent"
                 x:Name="AssetLocationList"
                 HasUnevenRows="false"
                 SeparatorVisibility = "Default"
+                ItemTapped = "Handle_ItemTapped"
                 RowHeight="150">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -48,12 +63,21 @@
                                     Grid.Column = "0"
                                     Grid.ColumnSpan = "2" />
                                 
-                                <Image
+                                <customControl:MapViewImage
                                     Source = "location_icon1.png"
+                                    InspectionID = "{Binding TaskId}"
+                                    InspectionAddress = "{Binding address}"
                                     Margin = "25,5,25,5"
                                     Aspect = "Fill" 
                                     Grid.Row = "0"
-                                    Grid.Column = "2" />
+                                    Grid.Column = "2" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                            Tapped = "MapView_Tapped"
+                                            NumberOfTapsRequired = "1" />
+                                    </Image.GestureRecognizers>
+                                    
+                                </customControl:MapViewImage>
                                 
                                 <Label
                                     Text = "Inspection Type: "
@@ -64,8 +88,11 @@
                                     Grid.Row = "1"
                                     Grid.Column = "0" />
                                 
-                                <Button
+                                <customControl:InspectionTypeButton
                                     Text = "{Binding inspectionType}"
+                                    InspectionType = "{Binding inspectionType}"
+                                    InspectionID = "{Binding TaskId}"
+                                    InspectionAddress = "{Binding address}"
                                     TextColor = "Black"
                                     Margin = "0,8,0,8"
                                     BackgroundColor = "Gray"
@@ -75,40 +102,8 @@
                                     Grid.ColumnSpan = "2"/>
                                 
                             </Grid>
-                            
-                            
-                            <!--StackLayout
-                                BackgroundColor = "White"
-                                Margin = "20,10,20,10">
-                            
-                                <Label 
-                                    Text = "{Binding address}"
-                                    TextColor = "Black"
-                                    HorizontalOptions = "FillAndExpand"
-                                    VerticalOptions = "Start"/>
-
-                                <Image
-                                    Source = "location_icon1.png"
-                                    VerticalOptions = "Start"
-                                    HorizontalOptions = "End"
-                                    WidthRequest = "50"
-                                    HeightRequest = "50"
-                                    Aspect = "Fill" />
-                                    
-                                <Label
-                                    Text = "Inspection Type:: "
-                                    TextColor = "Black"
-                                    HorizontalOptions = "Start"
-                                    VerticalOptions = "End" />
-                                
-                                <Button
-                                    Text = "{Binding inspectionType}"
-                                    TextColor = "Black"
-                                    HorizontalOptions = "End"
-                                    VerticalOptions = "End"
-                                    BackgroundColor = "Gray" />
-
-                            </StackLayout-->
+  
+                          
                         </ViewCell>   
                     </DataTemplate>
                 </ListView.ItemTemplate>
