@@ -63,10 +63,9 @@
                                     Grid.Column = "0"
                                     Grid.ColumnSpan = "2" />
                                 
-                                <customControl:MapViewImage
+                                <customControl:ImageButton
                                     Source = "location_icon1.png"
-                                    InspectionID = "{Binding TaskId}"
-                                    InspectionAddress = "{Binding address}"
+                                    ItemObject = "{Binding .}"
                                     Margin = "25,5,25,5"
                                     Aspect = "Fill" 
                                     Grid.Row = "0"
@@ -77,7 +76,7 @@
                                             NumberOfTapsRequired = "1" />
                                     </Image.GestureRecognizers>
                                     
-                                </customControl:MapViewImage>
+                                </customControl:ImageButton>
                                 
                                 <Label
                                     Text = "Inspection Type: "
@@ -93,6 +92,7 @@
                                     InspectionType = "{Binding inspectionType}"
                                     InspectionID = "{Binding TaskId}"
                                     InspectionAddress = "{Binding address}"
+                                    AssetLocationObject = "{Binding .}"
                                     TextColor = "Black"
                                     Margin = "0,8,0,8"
                                     BackgroundColor = "Gray"

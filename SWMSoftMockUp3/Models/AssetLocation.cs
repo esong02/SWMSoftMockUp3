@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace SWMSoftMockUp3.Models
 {
     public class AssetLocation
@@ -8,5 +10,6 @@ namespace SWMSoftMockUp3.Models
         public string postalCode { get; set; }
         public string city { get; set; }
         public string inspectionType { get; set; }
+        public List<Asset> assetList { get; set; }
     }
 }

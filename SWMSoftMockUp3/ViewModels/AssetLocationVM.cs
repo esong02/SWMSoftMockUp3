@@ -6,7 +6,7 @@ using SWMSoftMockUp3.Models;
 
 namespace SWMSoftMockUp3.ViewModels
 {
-    public class AssetLocationVM : INotifyPropertyChanged
+    public class AssetLocationVM
     {
 
         public ObservableCollection<AssetLocation> _assetLocations { get; set; }
@@ -21,7 +21,131 @@ namespace SWMSoftMockUp3.ViewModels
                     address = "Golf & Country Club, 500 Davis Drive",
                     inspectionType = "Assumption Inspection",
                     city = "Newmarket Ont.",
-                    postalCode = "L3Y 7V8"
+                    postalCode = "L3Y 7V8",
+                    assetList = new System.Collections.Generic.List<Asset>{
+                        new Asset{
+                            Id = 0,
+                            Name = "Pondview 2",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "Facility"
+
+                        },
+                        new Asset{
+							Id = 1,
+							Name = "Concord Stormpond",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "Facility"
+                        },
+						new Asset{
+							Id = 2,
+							Name = "Sample Bridge",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "Structure"
+						},
+						new Asset{
+							Id = 3,
+							Name = "Sample LID 1",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 4,
+							Name = "Sample LID 2",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 5,
+							Name = "Sample LID 3",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 6,
+							Name = "Sample LID 4",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 7,
+							Name = "Sample LID 5",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 8,
+							Name = "Sample LID 6",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 9,
+							Name = "Sample LID 7",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 10,
+							Name = "Sample LID 8",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						}
+                    }
                 },
                 new AssetLocation{
                     TaskId = 2,
@@ -47,7 +171,6 @@ namespace SWMSoftMockUp3.ViewModels
             _assetLocations.Insert(index,aLocation);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
     }
 }

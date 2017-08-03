@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using SWMSoftMockUp3.Models;
 
 namespace SWMSoftMockUp3.CustomControls
 {
@@ -27,6 +28,14 @@ namespace SWMSoftMockUp3.CustomControls
 		{
 			get { return (string)GetValue(InspectionAddressProperty); }
 			set { SetValue(InspectionIDProperty, value); }
+		}
+
+		public static readonly BindableProperty AssetLocationObjectProperty = BindableProperty.Create("AssetLocationObject", typeof(AssetLocation), typeof(InspectionTypeButton), null);
+
+		public AssetLocation AssetLocationObject
+		{
+			get { return (AssetLocation)GetValue(AssetLocationObjectProperty); }
+			set { SetValue(AssetLocationObjectProperty, value); }
 		}
 
     }

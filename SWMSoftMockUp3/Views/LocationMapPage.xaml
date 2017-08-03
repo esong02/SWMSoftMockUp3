@@ -24,7 +24,7 @@
 
              <Label
                 x:Name="LocationText"
-                Text = "Directions:"
+                Text = "Address:"
                 TextColor = "White"
                 LineBreakMode = "WordWrap"
                 HorizontalTextAlignment = "Start"

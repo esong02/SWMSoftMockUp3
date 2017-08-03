@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -19,27 +19,33 @@ namespace SWMSoftMockUp3.Views
             ((ListView)sender).SelectedItem = null; // de-select the row         }
 		}
 
-        async void OnCallLocationMapPage(int id, string address){
-            await Navigation.PushAsync(new LocationMapPage(id, address));
+        async void OnCallLocationMapPage(object itemObject){
+            await Navigation.PushAsync(new LocationMapPage(itemObject));
         }
 
         void MapView_Tapped(object sender, System.EventArgs e)
         {
 
-            var item = sender as MapViewImage;
+            var item = sender as ImageButton;
 
-            OnCallLocationMapPage(item.InspectionID, item.InspectionAddress);
+            OnCallLocationMapPage(item.ItemObject);
         }
+
+
+		async void OnCallAssetListPage(AssetLocation location)
+		{
+			await Navigation.PushAsync(new AssetListPage(_aLVM,location));
+		}
 
 		void InspectionType_Clicked(object sender, System.EventArgs e)
 		//-------------------------------------------------------------
 		{
 			var item = sender as InspectionTypeButton;
 
-			DisplayAlert("Test", item.InspectionID + " : " + item.InspectionType + "\n" + item.InspectionAddress, "Ok");
-			// now you can fully access the listview item here via the variable "item"
-			// ...
+            //DisplayAlert("Test", item.InspectionID + " : " + item.InspectionType + "\n" + item.InspectionAddress, "Ok");
+            //DisplayAlert("Test", item.AssetLocationObject.address, "Ok");
 
+            OnCallAssetListPage(item.AssetLocationObject);
 		}
 
         //Constructor. This creates the Location list Page.

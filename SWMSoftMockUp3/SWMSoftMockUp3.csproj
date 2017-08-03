@@ -38,6 +38,15 @@
     <EmbeddedResource Include="Views\LocationMapPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AssetListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaskItemPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ComponentListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -59,6 +68,22 @@
     </Compile>
     <Compile Include="CustomControls\InspectionTypeButton.cs" />
     <Compile Include="CustomControls\MapViewImageButton.cs" />
+    <Compile Include="Views\AssetListPage.xaml.cs">
+      <DependentUpon>AssetListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Asset.cs" />
+    <Compile Include="ViewModels\AssetListVM.cs" />
+    <Compile Include="DataTypes\AssetType.cs" />
+    <Compile Include="CustomControls\AssetListView.cs" />
+    <Compile Include="CustomControls\ImageButton.cs" />
+    <Compile Include="Views\TaskItemPage.xaml.cs">
+      <DependentUpon>TaskItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComponentListPage.xaml.cs">
+      <DependentUpon>ComponentListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ComponentListVM.cs" />
+    <Compile Include="DataLists\ComponentList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -80,6 +105,7 @@
     <Folder Include="Models\" />
     <Folder Include="DataLists\" />
     <Folder Include="CustomControls\" />
+    <Folder Include="DataTypes\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
