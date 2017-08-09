@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    Title="SWMSoft"
+    BackgroundImage="SplashScreen3.png"
+    x:Class="SWMSoftMockUp3.Views.IntroPages.LoginServerPage">
+	<ContentPage.Content>
+        <AbsoluteLayout
+            BackgroundColor="#30d3d3d3">
+        
+            <StackLayout
+                IsVisible="false"
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                Margin = "40,40,40,40"
+                x:Name="ServerBox"
+                Orientation="Vertical"
+                BackgroundColor="White" >
+
+                <Image 
+                    Source="key_icon.png"
+                    Margin="0,20,0,0"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="200"
+                    HeightRequest="150"
+                    Aspect="AspectFit"/> 
+
+                <Label
+                    Text="Server ID#"
+                    Margin="20,0,20,0"
+                    TextColor="Navy"                
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    x:Name="ServerID" />
+
+                <Editor 
+                    Text="Disabled. Press Connect to proceed."
+                    Margin="20,0,20,0"
+                    x:Name="ServerText"
+                    HeightRequest="100"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor = "#F0d3d3d3"/>
+                
+                <Button
+                    Text="Connect"
+                    TextColor="White"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Blue"
+                    Margin="20,0,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+            </StackLayout>
+
+            <StackLayout
+                IsVisible="true"
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                x:Name="LoginBox"
+                Orientation="Vertical"
+                Margin="40,40,40,40"
+                BackgroundColor="White" >
+
+                <Image 
+                    Source="key_icon.png"
+                    Margin="0,20,0,0"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="200"
+                    HeightRequest="150"
+                    Aspect="AspectFit"/> 
+
+                <Entry
+                    Placeholder="Username"
+                    PlaceholderColor="Gray"
+                    Margin="20,0,20,0"
+                    TextColor="Navy"                
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    x:Name="UserName" />
+
+                <Entry
+                    IsPassword="true"
+                    Placeholder="Password"
+                    PlaceholderColor="Gray"
+                    Margin="20,0,20,0"
+                    TextColor="Navy"                
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    x:Name="Password" />
+                
+                <Button
+                    Text="Enter"
+                    TextColor="White"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Blue"
+                    Margin="20,0,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" />
+
+                <Label
+                    Text="Forgot Password"
+                    TextColor="Blue"
+                    Margin="0,0,0,15"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    FontSize="14"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout> 
+
+
+            
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

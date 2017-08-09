@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:SWMSoftMockUp3.Views"
     BackgroundImage="SplashScreen1.png"
-    Title="SWMSoft"
+    Title="Server"
     x:Class="SWMSoftMockUp3.Views.LoginPage">
 
     <StackLayout
@@ -47,19 +47,12 @@
                 HorizontalTextAlignment="Center"
                 FontAttributes="Bold"
                 x:Name="Password" />
-
-            <Label
-                Text="New User"
-                TextColor="Blue"
-                VerticalOptions="CenterAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                FontSize="14"
-                HorizontalTextAlignment="Center" />
             
             <Button
                 Text="Enter"
                 TextColor="White"
                 FontSize="30"
+                FontAttributes="Bold"
                 BackgroundColor="Blue"
                 Margin="20,0,20,0"
                 HorizontalOptions="FillAndExpand"

@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -12,8 +12,8 @@ namespace SWMSoftMockUp3.Views
     public partial class AssetListPage : ContentPage
     {
 
-        AssetLocationVM _aLVM = null;
-        List<Asset> _assetList = null;
+        AssetLocationVM _aLVM;
+        List<Asset> _assetList;
 
         public AssetListPage(AssetLocationVM aLVM,AssetLocation location)
         {
@@ -23,6 +23,8 @@ namespace SWMSoftMockUp3.Views
             _aLVM = aLVM;
             _assetList = location.assetList;
 
+            MapIcon.ObjReference = location;
+
             int maxRowCount = 3;
             int maxColumnCount = getColumntCount(maxRowCount);
 
@@ -30,11 +32,16 @@ namespace SWMSoftMockUp3.Views
 
         }
 
-        /*
+		/*
         async void OnCallTaskItem(Asset asset){
             await Navigation.PushAsync();
         }
         */
+
+		async void OnCallComponentItem(Asset asset)
+		{
+			await Navigation.PushAsync(new ComponentListPage(asset));
+		}
 
         int getColumntCount(int maxRowCount){
 
@@ -96,15 +103,16 @@ namespace SWMSoftMockUp3.Views
 							Aspect = Aspect.AspectFit,
 							HorizontalOptions = LayoutOptions.CenterAndExpand,
 							VerticalOptions = LayoutOptions.StartAndExpand,
-							ItemObject = _assetList[assetCount]
+							ObjReference = _assetList[assetCount]
 						};
 
 						var tapGestureRecognizer = new TapGestureRecognizer();
 						tapGestureRecognizer.Tapped += (s, e) =>
 						{
 							var item = s as ImageButton;
-							Asset asset = item.ItemObject as Asset;
-							DisplayAlert("Test", asset.Name, "Ok");
+							Asset asset = item.ObjReference as Asset;
+							//DisplayAlert("Test", asset.Name, "Ok");
+                            OnCallComponentItem(asset);
 						};
 
 						iconBtn.GestureRecognizers.Add(tapGestureRecognizer);

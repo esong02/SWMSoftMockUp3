@@ -33,7 +33,9 @@ namespace SWMSoftMockUp3.Views
             }
 
             if (!loginSuccess){
-                DisplayAlert("Login","Login Failed","Ok");
+                //DisplayAlert("Login","Login Failed","Ok");
+                Password.Text = "";
+                Password.Placeholder = "Invalid Password";
             }else{
                 OnCallLocationListPage();
             }

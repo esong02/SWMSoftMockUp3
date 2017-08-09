@@ -4,7 +4,7 @@ using SWMSoftMockUp3.Models;
 
 namespace SWMSoftMockUp3.CustomControls
 {
-    public class InspectionTypeButton : Button
+    public class InspectionTypeButton : ListButton
     {
         public static readonly BindableProperty InspectionTypeProperty = BindableProperty.Create("InspectionType", typeof(string), typeof(InspectionTypeButton), "");
 
@@ -28,14 +28,6 @@ namespace SWMSoftMockUp3.CustomControls
 		{
 			get { return (string)GetValue(InspectionAddressProperty); }
 			set { SetValue(InspectionIDProperty, value); }
-		}
-
-		public static readonly BindableProperty AssetLocationObjectProperty = BindableProperty.Create("AssetLocationObject", typeof(AssetLocation), typeof(InspectionTypeButton), null);
-
-		public AssetLocation AssetLocationObject
-		{
-			get { return (AssetLocation)GetValue(AssetLocationObjectProperty); }
-			set { SetValue(AssetLocationObjectProperty, value); }
 		}
 
     }

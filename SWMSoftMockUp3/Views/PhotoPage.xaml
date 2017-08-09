@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
+    BackgroundColor = "Blue"
+    x:Class="SWMSoftMockUp3.Views.PhotoPage">
+	<ContentPage.Content>
+        <AbsoluteLayout>
+            <Label
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,0.1"
+                Text = "Photo"
+                HorizontalTextAlignment = "Start"
+                HeightRequest = "30"
+                TextColor = "White"
+                Margin = "30,0,0,0"
+                FontSize = "20"
+                FontAttributes = "Bold" />
+
+            <Grid
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                BackgroundColor = "White"
+                Margin = "10,40,10,10"
+                Padding = "10,10,10,10"
+                x:Name = "AssetGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "Auto" />
+                    <RowDefinition Height = "Auto" />
+                    <RowDefinition Height = "Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+                    <ColumnDefinition Width = "*" />
+                </Grid.ColumnDefinitions>
+
+                <Image
+                    Grid.Row = "0"
+                    Grid.Column = "0"
+                    Grid.ColumnSpan = "6"
+                    Source = "Sample_Photo.png" />
+
+                <Label
+                    Text = "Last Inspection Photo 8/30/17"
+                    HorizontalOptions = "CenterAndExpand"
+                    LineBreakMode = "WordWrap"
+                    Grid.Row = "1"
+                    Grid.Column = "0"
+                    Grid.ColumnSpan = "6" />
+
+                <Image
+                    Grid.Row = "2"
+                    Grid.Column = "0"
+                    Grid.ColumnSpan = "6"
+                    Source = "Sample_Photo.png" />
+
+                <Label
+                    Text = "Today's Date"
+                    HorizontalTextAlignment = "Start"
+                    Grid.Row = "3"
+                    Grid.Column = "1"
+                    Grid.ColumnSpan = "2"/>
+
+                <Label
+                    Text = "Delete Photo"
+                    HorizontalTextAlignment = "End"
+                    Grid.Row = "3"
+                    Grid.Column = "3"
+                    Grid.ColumnSpan = "2" />
+
+                <customControl:ImageButton
+                    Grid.Row = "4"    
+                    Grid.Column = "0"
+                    Grid.ColumnSpan = "2"
+                    Aspect = "AspectFit"
+                    Source = "NoteIcon.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped = "AddNote_Tapped"
+                            NumberOfTapsRequired = "1" />
+                    </Image.GestureRecognizers>
+                </customControl:ImageButton>
+
+                <customControl:ImageButton
+                    Grid.Row = "4"    
+                    Grid.Column = "2"
+                    Grid.ColumnSpan = "2"
+                    Aspect = "AspectFit"
+                    Source = "camera_Icon.png">
+
+                </customControl:ImageButton>
+
+                <customControl:ImageButton
+                    Grid.Row = "4"    
+                    Grid.Column = "4"
+                    Grid.ColumnSpan = "2"
+                    Aspect = "AspectFit"
+                    Source = "Archive1.png">
+
+                </customControl:ImageButton>
+
+                <Label
+                    Grid.Row = "5"
+                    Grid.Column = "0"
+                    Grid.ColumnSpan = "2"
+                    Text = "Add Note"
+                    HorizontalOptions = "CenterAndExpand" />
+
+                <Label
+                    Grid.Row = "5"
+                    Grid.Column = "2"
+                    Grid.ColumnSpan = "2"
+                    Text = "Add Photo"
+                    HorizontalOptions = "CenterAndExpand" />
+
+                <Label
+                    Grid.Row = "5"
+                    Grid.Column = "4"
+                    Grid.ColumnSpan = "2"
+                    Text = "Add Gallery"
+                    HorizontalOptions = "CenterAndExpand" />
+                    
+
+                
+            </Grid>
+
+            <StackLayout
+                x:Name="CommentDialogScreen"
+                IsVisible = "false"
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                BackgroundColor = "#60000000">
+
+                <StackLayout
+                    BackgroundColor = "White"
+                    VerticalOptions = "StartAndExpand"
+                    HorizontalOptions = "CenterAndExpand"
+                    Orientation = "Vertical"
+                    HeightRequest = "200"
+                    WidthRequest = "350"
+                    Margin = "0,30,0,0">
+
+                    <Label
+                        Text = "Comment"
+                        TextColor = "Black"
+                        VerticalOptions = "StartAndExpand"
+                        FontAttributes = "Bold"
+                        FontSize = "16" />
+
+                    <Editor
+                        Text = "Sample Comment"
+                        TextColor = "Black"
+                        VerticalOptions = "FillAndExpand"
+                        HorizontalOptions = "FillAndExpand"
+                        Margin = "10,10,10,10"
+                        HeightRequest = "60" />
+
+                    <StackLayout
+                        Orientation = "Horizontal">
+                        <Button
+                            HorizontalOptions = "EndAndExpand"
+                            Margin = "0,10,0,10"
+                            Text = "Cancel"
+                            TextColor = "Black"
+                            Clicked = "CommentCancel_Clicked"/>
+
+                        <Button
+                            HorizontalOptions = "End"
+                            Margin = "0,10,10,10"
+                            Text = "Save"
+                            TextColor = "Black" />
+                        
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped = "CloseDialog_Tapped"
+                        NumberOfTapsRequired = "1" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

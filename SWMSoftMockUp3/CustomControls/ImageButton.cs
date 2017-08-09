@@ -6,12 +6,12 @@ namespace SWMSoftMockUp3.CustomControls
 {
     public class ImageButton : Image
     {
-		public static readonly BindableProperty ItemObjectProperty = BindableProperty.Create("ItemObject", typeof(object), typeof(ImageButton), null);
+		public static readonly BindableProperty ObjReferenceProperty = BindableProperty.Create("ObjReference", typeof(object), typeof(ImageButton), null);
 
-		public object ItemObject
+        public object ObjReference
 		{
-			get { return (object)GetValue(ItemObjectProperty); }
-			set { SetValue(ItemObjectProperty, value); }
+			get { return (object)GetValue(ObjReferenceProperty); }
+			set { SetValue(ObjReferenceProperty, value); }
 		}
 
 	}

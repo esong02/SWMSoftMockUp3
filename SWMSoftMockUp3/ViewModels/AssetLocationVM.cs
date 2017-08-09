@@ -144,7 +144,74 @@ namespace SWMSoftMockUp3.ViewModels
 							Address = "500 Davis Drive",
 							YearBuilt = 1200,
 							type = "LID"
+						},
+						new Asset{
+							Id = 11,
+							Name = "Sample LID 7",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 12,
+							Name = "Sample LID 8",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 13,
+							Name = "Sample LID 9",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 14,
+							Name = "Sample LID 9",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 15,
+							Name = "Sample LID 10",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
+						},
+						new Asset{
+							Id = 16,
+							Name = "Sample LID 11",
+							MunicipalId = "Vaughan Municpality",
+							Comments = "N/A",
+							LocationDescription = "Somewhere",
+							NearestIntersection = "Somewhere as well",
+							Address = "500 Davis Drive",
+							YearBuilt = 1200,
+							type = "LID"
 						}
+
                     }
                 },
                 new AssetLocation{

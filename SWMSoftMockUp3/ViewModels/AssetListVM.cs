@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
@@ -11,6 +11,10 @@ namespace SWMSoftMockUp3.ViewModels
     {
 
         public ObservableCollection<Asset> _assetList { get; set; }
+
+        public AssetListVM(){
+            _assetList = new ObservableCollection<Asset>();
+        }
 
         public AssetListVM(AssetLocation location)
         {

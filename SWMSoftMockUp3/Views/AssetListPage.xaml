@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:viewModel="clr-namespace:SWMSoftMockUp3.ViewModels;assembly=SWMSoftMockUp3"
+    xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
     x:Class="SWMSoftMockUp3.Views.AssetListPage">
 
     <ContentPage.BindingContext>
@@ -10,20 +11,48 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-
-    <!-- Default Horizontal View-->
+        
+    <!-- Default Portrait View-->
         <StackLayout
-            BackgroundColor = "Blue">
-            <Grid
+            BackgroundColor = "Blue"
+            Orientation = "Vertical">
+             <StackLayout
+                x:Name="MapBar"
+                VerticalOptions = "Start"
+                Orientation="Horizontal"
+                HeightRequest = "60"
+                BackgroundColor="White">
+                <Label 
+                    Text = "Path"
+                    TextColor = "Black"
+                    Margin = "20,0,0,0"
+                    HorizontalOptions = "StartAndExpand"
+                    VerticalOptions = "CenterAndExpand" />
+                <customControl:ImageButton
+                    x:Name="MapIcon"
+                    WidthRequest = "50"
+                    HeightRequest = "50"
+                    Margin = "0,0,20,0"
+                    Source = "location_icon1.png"
+                    HorizontalOptions = "EndAndExpand"
+                    VerticalOptions = "CenterAndExpand" />
+            </StackLayout>
+
+            <ScrollView
+                x:Name = "GridContainer"
                 Margin = "0,20,0,0"
-                x:Name = "AssetGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height = "*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width = "*" />
-                 </Grid.ColumnDefinitions>
-            </Grid>
+                VerticalOptions = "Start">
+                <Grid
+                    Padding = "0,0,0,20"
+                    x:Name = "AssetGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width = "*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </ScrollView>
         </StackLayout>
         
 	</ContentPage.Content>

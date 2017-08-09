@@ -1,5 +1,6 @@
 ﻿using Xamarin.Forms;
 using SWMSoftMockUp3.Views;
+using SWMSoftMockUp3.Views.IntroPages;
 
 namespace SWMSoftMockUp3
 {
@@ -8,7 +9,10 @@ namespace SWMSoftMockUp3
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new ServerPage();
+            MainPage = new NavigationPage(new ServerPage());
+            //MainPage = new NavigationPage(new LoginServerPage());
+            //MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

@@ -12,6 +12,18 @@ namespace SWMSoftMockUp3.Views
     {
         AssetLocationVM _aLVM;
 
+		//Constructor. This creates the Location list Page.
+		public LocationListPage(string userName)
+		{
+			InitializeComponent();
+			//var navPage = Application.Current.MainPage as NavigationPage;
+			//navPage.BarBackgroundColor = Color.White;
+			//navPage.BarTextColor = Color.Black;
+			_aLVM = new AssetLocationVM();
+			AssetLocationList.ItemsSource = _aLVM._assetLocations;
+
+		}
+
         //Used to disable Highlight Selection, since the feature is not used
         void Handle_ItemTapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
         {
@@ -28,13 +40,21 @@ namespace SWMSoftMockUp3.Views
 
             var item = sender as ImageButton;
 
-            OnCallLocationMapPage(item.ItemObject);
+            OnCallLocationMapPage(item.ObjReference);
         }
 
 
-		async void OnCallAssetListPage(AssetLocation location)
+		async void OnCallAssetListPage(object location)
 		{
-			await Navigation.PushAsync(new AssetListPage(_aLVM,location));
+            /*
+            if (location != null){
+                
+            }
+            */
+
+            var aLocation = location as AssetLocation;
+
+			await Navigation.PushAsync(new AssetListPage(_aLVM,aLocation));
 		}
 
 		void InspectionType_Clicked(object sender, System.EventArgs e)
@@ -42,24 +62,10 @@ namespace SWMSoftMockUp3.Views
 		{
 			var item = sender as InspectionTypeButton;
 
-            //DisplayAlert("Test", item.InspectionID + " : " + item.InspectionType + "\n" + item.InspectionAddress, "Ok");
-            //DisplayAlert("Test", item.AssetLocationObject.address, "Ok");
-
-            OnCallAssetListPage(item.AssetLocationObject);
+            OnCallAssetListPage(item.ObjReference);
 		}
 
-        //Constructor. This creates the Location list Page.
-        public LocationListPage(string userName)
-        {
-            InitializeComponent();
-            //var navPage = Application.Current.MainPage as NavigationPage;
-            //navPage.BarBackgroundColor = Color.White;
-            //navPage.BarTextColor = Color.Black;
 
-            _aLVM = new AssetLocationVM();
-            AssetLocationList.ItemsSource = _aLVM._assetLocations;
-
-        }
 
     }
 

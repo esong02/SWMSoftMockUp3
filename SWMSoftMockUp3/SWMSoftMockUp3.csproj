@@ -47,6 +47,21 @@
     <EmbeddedResource Include="Views\ComponentListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OptionWheel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TaskPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IntroPages\LoginServerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PhotoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -74,7 +89,6 @@
     <Compile Include="Models\Asset.cs" />
     <Compile Include="ViewModels\AssetListVM.cs" />
     <Compile Include="DataTypes\AssetType.cs" />
-    <Compile Include="CustomControls\AssetListView.cs" />
     <Compile Include="CustomControls\ImageButton.cs" />
     <Compile Include="Views\TaskItemPage.xaml.cs">
       <DependentUpon>TaskItemPage.xaml</DependentUpon>
@@ -84,6 +98,24 @@
     </Compile>
     <Compile Include="ViewModels\ComponentListVM.cs" />
     <Compile Include="DataLists\ComponentList.cs" />
+    <Compile Include="Models\Component.cs" />
+    <Compile Include="CustomControls\ListButton.cs" />
+    <Compile Include="Views\ServerPage.xaml.cs">
+      <DependentUpon>ServerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionWheel.xaml.cs">
+      <DependentUpon>OptionWheel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OptionWheel.cs" />
+    <Compile Include="Views\TaskPage.xaml.cs">
+      <DependentUpon>TaskPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IntroPages\LoginServerPage.xaml.cs">
+      <DependentUpon>LoginServerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhotoPage.xaml.cs">
+      <DependentUpon>PhotoPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -106,6 +138,7 @@
     <Folder Include="DataLists\" />
     <Folder Include="CustomControls\" />
     <Folder Include="DataTypes\" />
+    <Folder Include="Views\IntroPages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
