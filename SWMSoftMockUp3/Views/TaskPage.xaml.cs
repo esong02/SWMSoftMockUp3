@@ -21,6 +21,22 @@ namespace SWMSoftMockUp3.Views
 
         }
 
+		async void OnCallLocationMapPage()
+		{
+			AssetLocation location = new AssetLocation
+			{
+				TaskId = 10,
+				address = "Sample"
+			};
+			await Navigation.PushAsync(new LocationMapPage(location));
+		}
+
+		void MapView_Tapped(object sender, System.EventArgs e)
+		{
+
+			OnCallLocationMapPage();
+		}
+
         async void OnCallPhotoPage(){
 
             Component compoment = MapIcon.ObjReference as Component;

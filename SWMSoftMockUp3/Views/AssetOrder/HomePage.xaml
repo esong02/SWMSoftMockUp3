@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:cView="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+    x:Class="SWMSoftMockUp3.Views.AssetOrder.HomePage">
+	<ContentPage.Content>
+        <StackLayout>
+            <cView:CarouselView
+                x:Name="AssetOrder"
+                ItemsSource = "{Binding _assetList}">
+                <cView:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLackLayout 
+                            x:Name="Asset Order">
+
+                            <Label
+                                Text = "{Binding .}"
+                                VerticalOptions = "CenterAndExpand"
+                                HorizontalOptions = "CenterAndExpand" />
+
+                        </StackLackLayout>
+
+                    </DataTemplate>
+
+                </cView:CarouselView.ItemTemplate>
+                
+            </cView:CarouselView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

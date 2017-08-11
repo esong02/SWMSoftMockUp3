@@ -27,10 +27,29 @@ namespace SWMSoftMockUp3.Views
 			int maxRowCount = 3;
 			int maxColumnCount = getColumntCount(maxRowCount);
 
-
-
 			populateGridView(maxRowCount, maxColumnCount);
 
+		}
+
+		async void OnCallLocationMapPage()
+		{
+			AssetLocation location = new AssetLocation
+			{
+				TaskId = 5,
+				address = "Sample"
+			};
+			await Navigation.PushAsync(new LocationMapPage(location));
+		}
+
+        async void OnCallInfoPage()
+		{
+		
+			await Navigation.PushAsync(new PhotoPage(selectedComponent));
+		}
+
+		void MapView_Tapped(object sender, System.EventArgs e)
+		{
+			OnCallLocationMapPage();
 		}
 
 		void OpenOptionWheelDialog()
@@ -99,8 +118,8 @@ namespace SWMSoftMockUp3.Views
         void Information_Tapped(object sender, System.EventArgs e)
 		//-------------------------------------------------------------
 		{
-			var item = sender as ImageButton;
-			DisplayAlert(selectedComponent.Name, "Information", "Ok");
+            DisplayAlert("Information Button","Tapped!","Ok");
+			OnCallInfoPage();
 
 		}
 

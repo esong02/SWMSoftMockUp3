@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using SWMSoftMockUp3.Views;
-using SWMSoftMockUp3.Views.IntroPages;
+using SWMSoftMockUp3.Views.Templates;
+using SWMSoftMockUp3.Views.AssetOrder;
 
 namespace SWMSoftMockUp3
 {
@@ -10,6 +11,7 @@ namespace SWMSoftMockUp3
         {
             InitializeComponent();
             //MainPage = new ServerPage();
+            //MainPage = new HomePage();
             MainPage = new NavigationPage(new ServerPage());
             //MainPage = new NavigationPage(new LoginServerPage());
             //MainPage = new NavigationPage(new LoginPage());

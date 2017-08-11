@@ -92,7 +92,11 @@
                     Grid.ColumnSpan = "2"
                     Aspect = "AspectFit"
                     Source = "camera_Icon.png">
-
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped = "AddPhoto_Tapped"
+                            NumberOfTapsRequired = "1" />
+                    </Image.GestureRecognizers>
                 </customControl:ImageButton>
 
                 <customControl:ImageButton
@@ -101,7 +105,11 @@
                     Grid.ColumnSpan = "2"
                     Aspect = "AspectFit"
                     Source = "Archive1.png">
-
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped = "Gallery_Tapped"
+                            NumberOfTapsRequired = "1" />
+                    </Image.GestureRecognizers>
                 </customControl:ImageButton>
 
                 <Label
@@ -124,8 +132,6 @@
                     Grid.ColumnSpan = "2"
                     Text = "Add Gallery"
                     HorizontalOptions = "CenterAndExpand" />
-                    
-
                 
             </Grid>
 
@@ -173,7 +179,8 @@
                             HorizontalOptions = "End"
                             Margin = "0,10,10,10"
                             Text = "Save"
-                            TextColor = "Black" />
+                            TextColor = "Black"
+                            Clicked = "CommentSave_Clicked" />
                         
                     </StackLayout>
 

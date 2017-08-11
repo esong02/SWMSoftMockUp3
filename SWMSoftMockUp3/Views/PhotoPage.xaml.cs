@@ -20,6 +20,16 @@ namespace SWMSoftMockUp3.Views
             CommentDialogScreen.IsVisible = true;
         }
 
+		void AddPhoto_Tapped(object sender, System.EventArgs e)
+		{
+			//CommentDialogScreen.IsVisible = true;
+		}
+
+		void Gallery_Tapped(object sender, System.EventArgs e)
+		{
+			//CommentDialogScreen.IsVisible = true;
+		}
+
         void CloseDialog_Tapped(object sender, System.EventArgs e)
         {
             CommentDialogScreen.IsVisible = false;
@@ -29,5 +39,10 @@ namespace SWMSoftMockUp3.Views
         {
             CommentDialogScreen.IsVisible = false;
         }
+
+		void CommentSave_Clicked(object sender, System.EventArgs e)
+		{
+			CommentDialogScreen.IsVisible = false;
+		}
     }
 }

@@ -37,6 +37,20 @@ namespace SWMSoftMockUp3.Views
             await Navigation.PushAsync();
         }
         */
+        async void OnCallLocationMapPage(){
+            AssetLocation location = new AssetLocation
+            {
+                TaskId = 10,
+                address = "Sample"
+            };
+            await Navigation.PushAsync(new LocationMapPage(location));
+        }
+
+		void MapView_Tapped(object sender, System.EventArgs e)
+		{
+
+			OnCallLocationMapPage();
+		}
 
 		async void OnCallComponentItem(Asset asset)
 		{

@@ -37,7 +37,13 @@
                     Margin = "0,0,20,0"
                     Source = "location_icon1.png"
                     HorizontalOptions = "EndAndExpand"
-                    VerticalOptions = "CenterAndExpand" />
+                    VerticalOptions = "CenterAndExpand" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped = "MapView_Tapped"
+                            NumberOfTapsRequired = "1" />
+                    </Image.GestureRecognizers>
+                </customControl:ImageButton>
             </StackLayout>
            
 
