@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
+             x:Class="SWMSoftMockUp3.Views.PhotoGallery">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="Blue">
+            <template:MapHeader />
+
+            <Label
+                Text="Gallery"
+                TextColor="White"
+                Margin="30,10,0,10"
+                FontAttributes="Bold" />
+            <StackLayout
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                BackgroundColor="White"
+                Margin="10,10,10,10"
+                    Padding="10,10,10,10">
+
+                <Label
+                        Text="Images Taken on this Date"
+                        TextColor="Black" />
+
+                <Image
+                    Source="Sample_Photo.png"/>
+
+                <Label
+                        Text="Comments: In here would be any notes or comments associated with this image"
+                    VerticalOptions="EndAndExpand"
+                        HorizontalOptions="FillAndExpand"/>
+
+                <Button
+                        Text="Edit"
+                        TextColor="White"
+                        HeightRequest="50"
+                        WidthRequest="100"
+                        VerticalOptions="End"
+                        HorizontalOptions="EndAndExpand"
+                        BackgroundColor="Blue" />
+
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

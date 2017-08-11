@@ -25,9 +25,14 @@ namespace SWMSoftMockUp3.Views
 			//CommentDialogScreen.IsVisible = true;
 		}
 
-		void Gallery_Tapped(object sender, System.EventArgs e)
+        async void OnCallGalleryPage()
+        {
+            await Navigation.PushAsync(new PhotoGallery());
+        }
+
+        void Gallery_Tapped(object sender, System.EventArgs e)
 		{
-			//CommentDialogScreen.IsVisible = true;
+            OnCallGalleryPage();
 		}
 
         void CloseDialog_Tapped(object sender, System.EventArgs e)

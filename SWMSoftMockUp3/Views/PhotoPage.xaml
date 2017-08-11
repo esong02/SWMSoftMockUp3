@@ -154,9 +154,10 @@
                     <Label
                         Text = "Comment"
                         TextColor = "Black"
+                        Margin="10,10,0,0"
                         VerticalOptions = "StartAndExpand"
                         FontAttributes = "Bold"
-                        FontSize = "16" />
+                        FontSize = "Large" />
 
                     <Editor
                         Text = "Sample Comment"

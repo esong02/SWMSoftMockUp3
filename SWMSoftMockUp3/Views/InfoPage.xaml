@@ -3,12 +3,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
+    xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates;assembly=SWMSoftMockUp3"
     BackgroundColor = "Blue"
     x:Class="SWMSoftMockUp3.Views.InfoPage">
 	<ContentPage.Content>
 
         <StackLayout
             Orientation = "Vertical">
+
+            <template:MapHeader
+                VerticalOptions = "Start"
+                HorizontalOptions = "FillAndExpand"/>
 
             <Label
                 Text = "Info"
@@ -18,19 +23,106 @@
                 VerticalOptions = "Start"
                 HorizontalOptions = "FillAndExpand"
                 Margin = "30,10,0,10" />
-            
+
             <StackLayout
-                VerticalOptions = "FillAndExpand"
-                HorizontalOptions = "FillAndExpand"
-                BackgroundColor = "White"
-                Margin = "10,10,10,10"
-                Padding = "10,10,10,10">
+                    Orientation="Vertical"
+                    BackgroundColor="White"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    Padding="10,10,10,10"
+                    Margin="10,10,10,10">
 
+                <Label 
+                        Text="This window would display all relevant Asset Information and detail"
+                        LineBreakMode="WordWrap"
+                    VerticalOptions="StartAndExpand"
+                        HorizontalOptions="FillAndExpand"/>
+
+                <Label
+                        Text="Name:"
+                        TextColor="Red"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Label
+                        Text="Location:"
+                        TextColor="Red"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Label
+                        Text="Description:"
+                        TextColor="Red"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Label
+                        Text="History:"
+                        TextColor="Red"
+                        HorizontalOptions="StartAndExpand" />
+
+                <Grid
+                    VerticalOptions="EndAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "Auto" />
+                        <RowDefinition Height = "Auto" />
+                        <RowDefinition Height = "Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                            Text="BMP Plan"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+
+                    <Button
+                            Text="View PDF"
+                            TextColor="Black"
+                            Grid.Row="0"
+                            Grid.Column="2"/>
+
+                    <Label 
+                            Text="Maintenance Plan"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+
+                    <Button
+                            Text="View PDF"
+                            TextColor="Black"
+                            Grid.Row="1"
+                            Grid.Column="2" />
+
+                    <Label 
+                            Text="BMP Plan"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="StartAndExpand"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+
+                    <Button
+                            Text="View PDF"
+                            TextColor="Black"
+                            Grid.Row="2"
+                            Grid.Column="2" />
+
+                </Grid>
             </StackLayout>
-            
         </StackLayout>
-        
-
         
 	</ContentPage.Content>
 </ContentPage>

@@ -30,7 +30,7 @@ namespace SWMSoftMockUp3.Views
 			populateGridView(maxRowCount, maxColumnCount);
 
 		}
-
+        /*
 		async void OnCallLocationMapPage()
 		{
 			AssetLocation location = new AssetLocation
@@ -41,16 +41,12 @@ namespace SWMSoftMockUp3.Views
 			await Navigation.PushAsync(new LocationMapPage(location));
 		}
 
-        async void OnCallInfoPage()
-		{
-		
-			await Navigation.PushAsync(new PhotoPage(selectedComponent));
-		}
 
 		void MapView_Tapped(object sender, System.EventArgs e)
 		{
 			OnCallLocationMapPage();
 		}
+        */
 
 		void OpenOptionWheelDialog()
 		{
@@ -107,27 +103,41 @@ namespace SWMSoftMockUp3.Views
 
 		}
 
-		void Maintenance_Tapped(object sender, System.EventArgs e)
+        async void OnCallMaintenancePage()
+        {
+            await Navigation.PushAsync(new MaintenancePage());
+        }
+
+        void Maintenance_Tapped(object sender, System.EventArgs e)
 		//-------------------------------------------------------------
 		{
-			var item = sender as ImageButton;
-			DisplayAlert(selectedComponent.Name, "Maintenance", "Ok");
+            OnCallMaintenancePage();
 
 		}
+
+        async void OnCallInfoPage()
+        {
+
+            await Navigation.PushAsync(new InfoPage());
+        }
 
         void Information_Tapped(object sender, System.EventArgs e)
 		//-------------------------------------------------------------
 		{
-            DisplayAlert("Information Button","Tapped!","Ok");
+            //DisplayAlert("Information Button","Tapped!","Ok");
 			OnCallInfoPage();
 
 		}
 
-		void Archive_Tapped(object sender, System.EventArgs e)
+        async void OnCallArchivePage()
+        {
+            await Navigation.PushAsync(new ArchiveFrontPage());
+        }
+
+        void Archive_Tapped(object sender, System.EventArgs e)
 		//-------------------------------------------------------------
 		{
-			var item = sender as ImageButton;
-			DisplayAlert(selectedComponent.Name, "Archive", "Ok");
+            OnCallArchivePage();
 
 		}
 

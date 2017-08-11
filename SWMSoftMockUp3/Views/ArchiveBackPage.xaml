@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
+             x:Class="SWMSoftMockUp3.Views.ArchiveBackPage">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="Blue">
+            <template:MapHeader />
+
+            <Label
+                Text="Archive/October 15th, 2017"
+                TextColor="White"
+                Margin="30,10,0,10"
+                FontAttributes="Bold" />
+
+            <StackLayout
+                BackgroundColor="White"
+                Margin="10,10,10,10"
+                Padding="10,10,10,10"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+
+                <Image
+                    Source="Sample_Photo.png"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10,10,0" />
+
+                <Label 
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Photo with Ranking"
+                    TextColor="Black"/>
+
+                <Label 
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10,10,10"
+                    Text="Description: This is where a description of the Facility would be included"
+                    TextColor="Black"/>
+
+                <Label 
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,10,10,10"
+                    Text="Comments: In here would be any notes or comments associated with this image"
+                    TextColor="Black"/>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

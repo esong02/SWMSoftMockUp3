@@ -20,6 +20,7 @@ namespace SWMSoftMockUp3.Views
 			//navPage.BarBackgroundColor = Color.White;
 			//navPage.BarTextColor = Color.Black;
 			_aLVM = new AssetLocationVM();
+            
 			AssetLocationList.ItemsSource = _aLVM._assetLocations;
 
 		}

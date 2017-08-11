@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
+             x:Class="SWMSoftMockUp3.Views.MaintenancePage">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="Blue">
+
+            <template:MapHeader />
+
+            <Label
+                Text="Maintenance"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Margin="30,10,0,10" />
+
+            <StackLayout
+                BackgroundColor="White"
+                Margin="10,10,10,10"
+                Padding="10,10,10,10">
+
+                <Label
+                    Text="This window will display all relevant Asset Maintenance history"
+                    LineBreakMode="WordWrap"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="FillAndExpand" />
+
+                <Label
+                    Text="Maintenance Reports"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <Button
+                    Text="Septmember 15, 2017"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,0,10,0"
+                    BackgroundColor="LightBlue" />
+
+                <Button
+                    Text="Download Older Data"
+                    TextColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,0,10,0"
+                    BackgroundColor="Gray" />
+
+                <Button
+                    BackgroundColor="Transparent"
+                    Text="Send Maintenance Note"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" />
+
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

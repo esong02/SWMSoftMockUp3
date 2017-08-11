@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -82,7 +82,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProgressStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ArchiveBackPage.xaml.cs">
+      <DependentUpon>ArchiveBackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArchiveFrontPage.xaml.cs">
+      <DependentUpon>ArchiveFrontPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -105,6 +112,12 @@
     <Compile Include="ViewModels\AssetListVM.cs" />
     <Compile Include="DataTypes\AssetType.cs" />
     <Compile Include="CustomControls\ImageButton.cs" />
+    <Compile Include="Views\MaintenancePage.xaml.cs">
+      <DependentUpon>MaintenancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PhotoGallery.xaml.cs">
+      <DependentUpon>PhotoGallery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TaskItemPage.xaml.cs">
       <DependentUpon>TaskItemPage.xaml</DependentUpon>
     </Compile>
@@ -127,6 +140,9 @@
     </Compile>
     <Compile Include="Views\PhotoPage.xaml.cs">
       <DependentUpon>PhotoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Templates\ContentBox.xaml.cs">
+      <DependentUpon>ContentBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Templates\LoginServerPage.xaml.cs">
       <DependentUpon>LoginServerPage.xaml</DependentUpon>
@@ -165,14 +181,34 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Models\" />
-    <Folder Include="DataLists\" />
-    <Folder Include="CustomControls\" />
-    <Folder Include="DataTypes\" />
-    <Folder Include="Views\Templates\" />
-    <Folder Include="Views\AssetOrder\" />
+    <EmbeddedResource Include="Views\Templates\ContentBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\PhotoGallery.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MaintenancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ArchiveFrontPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ArchiveBackPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

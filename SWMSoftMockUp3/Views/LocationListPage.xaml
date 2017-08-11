@@ -32,8 +32,8 @@
                 x:Name="AssetLocationList"
                 HasUnevenRows="false"
                 SeparatorVisibility = "Default"
-                ItemTapped = "Handle_ItemTapped"
-                RowHeight="150">
+                RowHeight="160"
+                ItemTapped = "Handle_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -44,11 +44,13 @@
                                 Padding = "5,5,5,5">
                                 
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height = "*" />
-                                    <RowDefinition Height = "*" />
+                                    <RowDefinition Height = "Auto" />
+                                    <RowDefinition Height = "Auto" />
+                                    <RowDefinition Height = "Auto" />
                                 </Grid.RowDefinitions>
                                 
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width = "*" />
                                     <ColumnDefinition Width = "*" />
                                     <ColumnDefinition Width = "*" />
                                     <ColumnDefinition Width = "*" />
@@ -62,15 +64,16 @@
                                     FontSize = "16"
                                     Grid.Row = "0"
                                     Grid.Column = "0"
-                                    Grid.ColumnSpan = "2" />
+                                    Grid.ColumnSpan = "3" />
                                 
                                 <customControl:ImageButton
                                     Source = "location_icon1.png"
                                     ObjReference = "{Binding .}"
-                                    Margin = "25,5,25,5"
-                                    Aspect = "Fill" 
+                                    HeightRequest="20"
+                                    WidthRequest="20"
+                                    Aspect = "AspectFit" 
                                     Grid.Row = "0"
-                                    Grid.Column = "2" >
+                                    Grid.Column = "3" >
                                     <Image.GestureRecognizers>
                                         <TapGestureRecognizer
                                             Tapped = "MapView_Tapped"
@@ -82,11 +85,11 @@
                                 <Label
                                     Text = "Inspection Type: "
                                     LineBreakMode = "WordWrap"
-                                    VerticalOptions = "CenterAndExpand"
                                     Margin = "5,0,0,0"
                                     TextColor = "Black"
                                     Grid.Row = "1"
-                                    Grid.Column = "0" />
+                                    Grid.Column = "0"
+                                    Grid.ColumnSpan="4"/>
                                 
                                 <customControl:InspectionTypeButton
                                     Text = "{Binding inspectionType}"
@@ -95,13 +98,20 @@
                                     InspectionAddress = "{Binding address}"
                                     ObjReference = "{Binding .}"
                                     TextColor = "Black"
-                                    Margin = "0,8,0,8"
                                     BackgroundColor = "Gray"
                                     Clicked = "InspectionType_Clicked"
-                                    Grid.Row = "1"
-                                    Grid.Column = "1"
-                                    Grid.ColumnSpan = "2"/>
-                                
+                                    Grid.Row = "2"
+                                    Grid.Column = "0"
+                                    Grid.ColumnSpan = "3"/>
+
+                                <Image
+                                    Grid.Row="2"
+                                    Grid.Column="3"
+                                    WidthRequest="20"
+                                    HeightRequest="20"
+                                    Source="{Binding progressIcon}"
+                                    Aspect="AspectFit"/>
+
                             </Grid>
   
                         </ViewCell>   

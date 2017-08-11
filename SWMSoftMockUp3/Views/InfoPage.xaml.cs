@@ -10,16 +10,8 @@ namespace SWMSoftMockUp3.Views
         public InfoPage()
         {
             InitializeComponent();
-            DisplayAlert("Test","Test","Ok");
 
-			/*
-             * 
-             * 
-    xmlns:mapHeader="clr-namespace:SWMSoftMockUp3.Views.Templates;assembly=SWMSoftMockUp3"
-            <!--mapHeader:MapHeader
-                VerticalOptions = "Start"
-                HorizontalOptions = "FillAndExpand"/-->
-                */
+
 		}
 
     }

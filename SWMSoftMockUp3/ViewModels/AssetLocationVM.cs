@@ -20,6 +20,7 @@ namespace SWMSoftMockUp3.ViewModels
                     TaskId = 1,
                     address = "Golf & Country Club, 500 Davis Drive",
                     inspectionType = "Assumption Inspection",
+                    status = ProgressStatus.Status.Pending,
                     city = "Newmarket Ont.",
                     postalCode = "L3Y 7V8",
                     assetList = new System.Collections.Generic.List<Asset>{
@@ -219,17 +220,43 @@ namespace SWMSoftMockUp3.ViewModels
                     address = "Halton Conservation Authority, 2340 Platoon Street",
                     inspectionType = "Performance Verification",
                     city = "Halton Ont.",
+                    status = ProgressStatus.Status.Incomplete,
                     postalCode = "R4N 6T8"
 				},
 				new AssetLocation{
 					TaskId = 3,
 					address = "Wycreast Subdivision, 60 Willis Drive",
 					inspectionType = "Routine Maintenance",
-					city = "Bowmanville Ont.",
+                    status = ProgressStatus.Status.Complete,
+                    city = "Bowmanville Ont.",
 					postalCode = "J4K 8H3"
 				}
             };
 
+            StatusToIcon();
+
+        }
+        
+        void StatusToIcon() {
+            foreach (AssetLocation aLocation in _assetLocations)
+            {
+                if (aLocation.status == ProgressStatus.Status.Complete)
+                {
+                    aLocation.progressIcon = "Complete.png";
+                }
+                else if (aLocation.status == ProgressStatus.Status.Incomplete)
+                {
+                    aLocation.progressIcon = "Incomplete.png";
+                }
+                else if (aLocation.status == ProgressStatus.Status.Pending)
+                {
+                    aLocation.progressIcon = "Pending.png";
+                }
+                else
+                {
+                    aLocation.progressIcon = "";
+                }
+            }
         }
 
         void Update(AssetLocation aLocation){
