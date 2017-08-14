@@ -8,53 +8,6 @@
 	<ContentPage.Content>
         <AbsoluteLayout
             BackgroundColor="#30d3d3d3">
-        
-            <StackLayout
-                IsVisible="false"
-                AbsoluteLayout.LayoutFlags = "All"
-                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
-                Margin = "40,40,40,40"
-                x:Name="ServerBox"
-                Orientation="Vertical"
-                BackgroundColor="White" >
-
-                <Image 
-                    Source="key_icon.png"
-                    Margin="0,20,0,0"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    WidthRequest="200"
-                    HeightRequest="150"
-                    Aspect="AspectFit"/> 
-
-                <Label
-                    Text="Server ID#"
-                    Margin="20,0,20,0"
-                    TextColor="Navy"                
-                    FontSize="20"
-                    HorizontalTextAlignment="Center"
-                    FontAttributes="Bold"
-                    x:Name="ServerID" />
-
-                <Editor 
-                    Text="Disabled. Press Connect to proceed."
-                    Margin="20,0,20,0"
-                    x:Name="ServerText"
-                    HeightRequest="100"
-                    HorizontalOptions="FillAndExpand"
-                    BackgroundColor = "#F0d3d3d3"/>
-                
-                <Button
-                    Text="Connect"
-                    TextColor="White"
-                    FontSize="30"
-                    FontAttributes="Bold"
-                    BackgroundColor="Blue"
-                    Margin="20,0,20,0"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="CenterAndExpand"/>
-
-            </StackLayout>
 
             <StackLayout
                 IsVisible="true"
@@ -102,6 +55,7 @@
                     FontAttributes="Bold"
                     BackgroundColor="Blue"
                     Margin="20,0,20,0"
+                    Clicked="LoginButton_Clicked"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="CenterAndExpand" />
 
@@ -113,10 +67,57 @@
                     HorizontalOptions="CenterAndExpand"
                     FontSize="14"
                     HorizontalTextAlignment="Center" />
-            </StackLayout> 
+            </StackLayout>
+
+            <StackLayout
+                IsVisible="false"
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                Margin = "40,40,40,40"
+                x:Name="ServerBox"
+                Orientation="Vertical"
+                BackgroundColor="White" >
+
+                <Image 
+                    Source="key_icon.png"
+                    Margin="0,20,0,0"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="200"
+                    HeightRequest="150"
+                    Aspect="AspectFit"/>
+
+                <Label
+                    Text="Server ID#"
+                    Margin="20,0,20,0"
+                    TextColor="Navy"                
+                    FontSize="20"
+                    HorizontalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    x:Name="ServerID" />
+
+                <Editor 
+                    Text="Disabled. Press Connect to proceed."
+                    Margin="20,0,20,0"
+                    x:Name="ServerText"
+                    HeightRequest="100"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor = "#F0d3d3d3"/>
+
+                <Button
+                    Text="Connect"
+                    TextColor="White"
+                    FontSize="30"
+                    FontAttributes="Bold"
+                    BackgroundColor="Blue"
+                    Margin="20,0,20,0"
+                    Clicked="SetServerButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"/>
+
+            </StackLayout>
 
 
-            
         </AbsoluteLayout>
 	</ContentPage.Content>
 </ContentPage>

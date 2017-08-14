@@ -49,5 +49,16 @@ namespace SWMSoftMockUp3.Views
 		{
 			CommentDialogScreen.IsVisible = false;
 		}
+
+        private void CancelZoom_Tapped(object sender, EventArgs e)
+        {
+            ZoomedImageScreen.IsVisible = false;
+        }
+
+        private void ZoomImage_Tapped(object sender, EventArgs e)
+        {
+            ZoomedImageScreen.IsVisible = true;
+        }
+
     }
 }

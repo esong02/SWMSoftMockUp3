@@ -4,6 +4,7 @@
              xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
              x:Class="SWMSoftMockUp3.Views.PhotoGallery">
     <ContentPage.Content>
+        
         <StackLayout
             BackgroundColor="Blue">
             <template:MapHeader />

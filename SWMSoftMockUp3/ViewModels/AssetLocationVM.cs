@@ -221,8 +221,89 @@ namespace SWMSoftMockUp3.ViewModels
                     inspectionType = "Performance Verification",
                     city = "Halton Ont.",
                     status = ProgressStatus.Status.Incomplete,
-                    postalCode = "R4N 6T8"
-				},
+                    postalCode = "R4N 6T8",
+                    assetList = new System.Collections.Generic.List<Asset>{
+                        new Asset{
+                            Id = 0,
+                            Name = "Facility 1",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "Facility"
+
+                        },
+                        new Asset{
+                            Id = 1,
+                            Name = "Concord Stormpond 2",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "Facility"
+                        },
+                        new Asset{
+                            Id = 2,
+                            Name = "Sample Bridge",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "Structure"
+                        },
+                        new Asset{
+                            Id = 3,
+                            Name = "Sample LID 1",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "LID"
+                        },
+                        new Asset{
+                            Id = 4,
+                            Name = "Sample LID 2",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "LID"
+                        },
+                        new Asset{
+                            Id = 5,
+                            Name = "Sample LID 3",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "LID"
+                        },
+                        new Asset{
+                            Id = 6,
+                            Name = "Sample LID 4",
+                            MunicipalId = "Vaughan Municpality",
+                            Comments = "N/A",
+                            LocationDescription = "Somewhere",
+                            NearestIntersection = "Somewhere as well",
+                            Address = "500 Davis Drive",
+                            YearBuilt = 1200,
+                            type = "LID"
+                        }
+
+                    }
+                },
 				new AssetLocation{
 					TaskId = 3,
 					address = "Wycreast Subdivision, 60 Willis Drive",

@@ -5,8 +5,6 @@
     x:Class="SWMSoftMockUp3.Views.Templates.TestView">
 	<ContentView.Content>
 
-        <Label
-            Text = "Title" />
             
         
 	</ContentView.Content>

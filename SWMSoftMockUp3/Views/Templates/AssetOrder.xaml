@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AssetOrderTest"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="SWMSoftMockUp3.Views.Templates.AssetOrder">
+    <ContentPage.Content>
+        <StackLayout
+        BackgroundColor="White">
+
+            <Label
+            Text="Asset Order"
+            FontSize="Large"
+            FontAttributes="Bold"
+            TextColor="Black"
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand"/>
+
+            <cv:CarouselView 
+            x:Name="AssetOrder">
+                <cv:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout
+                        BackgroundColor="Transparent" >
+
+                            <Image 
+                            Source="{Binding ImageUrl}"
+                            AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,1.0"
+                            AbsoluteLayout.LayoutFlags="All"/>
+
+                            <StackLayout
+                            BackgroundColor="Transparent"
+                            AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,1.0"
+                            AbsoluteLayout.LayoutFlags="All" >
+                                <Label
+                                Text="{Binding Name}"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                TextColor="{Binding TextColor}"
+                                FontSize="Large"
+                                FontAttributes="{Binding FontAttribute}" />
+
+                            </StackLayout>
+
+                        </AbsoluteLayout>
+                    </DataTemplate>
+
+
+                </cv:CarouselView.ItemTemplate>
+
+            </cv:CarouselView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
