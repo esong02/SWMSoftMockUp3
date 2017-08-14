@@ -32,6 +32,10 @@
                 FontSize = "16" />
 
             <Label
+                Margin="10,5,10,5"
+                HorizontalOptions="Start"
+                FontSize="Medium"
+                TextColor="White"
                 Text="Directions: The location address and step by step navigation to the location would appear here via Google Maps"
                 LineBreakMode="WordWrap" />
 

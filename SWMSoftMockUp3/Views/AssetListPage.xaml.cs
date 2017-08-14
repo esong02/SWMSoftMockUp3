@@ -23,7 +23,7 @@ namespace SWMSoftMockUp3.Views
             _aLVM = aLVM;
             _assetList = location.assetList;
 
-            MapIcon.ObjReference = location;
+            //MapIcon.ObjReference = location;
 
             int maxRowCount = 3;
             int maxColumnCount = getColumntCount(maxRowCount);
@@ -105,13 +105,15 @@ namespace SWMSoftMockUp3.Views
 
                     //If not at the end of the asset list or empty
                     if (assetCount < maxAssetCount){
-						var assetCell = new StackLayout();
-						assetCell.HorizontalOptions = LayoutOptions.CenterAndExpand;
-						assetCell.VerticalOptions = LayoutOptions.StartAndExpand;
-						assetCell.Margin = new Thickness(5, 5, 5, 5);
-						assetCell.Orientation = StackOrientation.Vertical;
+                        var assetCell = new AbsoluteLayout()
+                        {
+                            //HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            //VerticalOptions = LayoutOptions.StartAndExpand,
+                            Margin = new Thickness(5, 5, 5, 5)
+                        };
+                        //assetCell.Orientation = StackOrientation.Vertical;
 
-						ImageButton iconBtn = new ImageButton
+                        ImageButton iconBtn = new ImageButton
 						{
 							Source = getImageLink(_assetList[assetCount].type),
 							Aspect = Aspect.AspectFit,
@@ -131,20 +133,60 @@ namespace SWMSoftMockUp3.Views
 
 						iconBtn.GestureRecognizers.Add(tapGestureRecognizer);
 
-						assetCell.Children.Add(iconBtn);
-						assetCell.Children.Add(new Label
-						{
-							Text = _assetList[assetCount].Name,
-							FontSize = 12,
-							VerticalOptions = LayoutOptions.StartAndExpand,
-							HorizontalOptions = LayoutOptions.CenterAndExpand,
-							HorizontalTextAlignment = TextAlignment.Center,
-							LineBreakMode = LineBreakMode.WordWrap,
-							TextColor = Color.White,
+                        AbsoluteLayout.SetLayoutBounds(iconBtn, new Rectangle(0.0,0.0,1.0,0.75));
+                        AbsoluteLayout.SetLayoutFlags(iconBtn, AbsoluteLayoutFlags.All);
 
-						});
+                        assetCell.Children.Add(iconBtn);
 
-						AssetGrid.Children.Add(assetCell, rowPosition, columnPosition);
+                        Label iconLabel = new Label
+                        {
+                            Text = _assetList[assetCount].Name,
+                            FontSize = 12,
+                            VerticalOptions = LayoutOptions.StartAndExpand,
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            LineBreakMode = LineBreakMode.WordWrap,
+                            TextColor = Color.White,
+
+                        };
+
+                        AbsoluteLayout.SetLayoutBounds(iconLabel, new Rectangle(0.0, 1.0, 1.0, 0.25));
+                        AbsoluteLayout.SetLayoutFlags(iconLabel, AbsoluteLayoutFlags.All);
+
+                        assetCell.Children.Add(iconLabel);
+
+
+                        string progressIconLink = "";
+
+                        if (_assetList[assetCount].Status == ProgressStatus.Status.Complete)
+                        {
+                            progressIconLink = "Complete.png";
+                        }
+                        else if (_assetList[assetCount].Status == ProgressStatus.Status.Pending)
+                        {
+                            progressIconLink = "Pending.png";
+                        }
+                        else if (_assetList[assetCount].Status == ProgressStatus.Status.Incomplete)
+                        {
+                            progressIconLink = "Incomplete.png";
+                        }
+                        else
+                        {
+                            progressIconLink = "Pending.png";
+                        }
+
+                        Image progressIcon = new Image
+                        {
+                            Source = progressIconLink,
+                            Aspect = Aspect.AspectFit
+                        };
+
+                        AbsoluteLayout.SetLayoutBounds(progressIcon, new Rectangle(1.0, 0.0, 0.4, 1.0));
+                        AbsoluteLayout.SetLayoutFlags(progressIcon, AbsoluteLayoutFlags.All);
+
+                        assetCell.Children.Add(progressIcon);
+
+                        AssetGrid.Children.Add(assetCell, rowPosition, columnPosition);
 						assetCount++;
 
                     }else{

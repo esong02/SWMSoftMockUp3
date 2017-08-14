@@ -2,6 +2,7 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
     xmlns:viewModel="clr-namespace:SWMSoftMockUp3.ViewModels;assembly=SWMSoftMockUp3"
     xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
     x:Class="SWMSoftMockUp3.Views.AssetListPage">
@@ -16,33 +17,9 @@
         <StackLayout
             BackgroundColor = "Blue"
             Orientation = "Vertical">
-             <StackLayout
-                x:Name="MapBar"
-                VerticalOptions = "Start"
-                Orientation="Horizontal"
-                HeightRequest = "60"
-                BackgroundColor="White">
-                <Label 
-                    Text = "Path"
-                    TextColor = "Black"
-                    Margin = "20,0,0,0"
-                    HorizontalOptions = "StartAndExpand"
-                    VerticalOptions = "CenterAndExpand" />
-                <customControl:ImageButton
-                    x:Name="MapIcon"
-                    WidthRequest = "50"
-                    HeightRequest = "50"
-                    Margin = "0,0,20,0"
-                    Source = "location_icon1.png"
-                    HorizontalOptions = "EndAndExpand"
-                    VerticalOptions = "CenterAndExpand" >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Tapped = "MapView_Tapped"
-                            NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
-            </StackLayout>
+            <template:MapHeader
+                VerticalOptions="Start"
+                HorizontalOptions="FillAndExpand"/>
 
             <ScrollView
                 x:Name = "GridContainer"

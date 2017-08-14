@@ -13,6 +13,7 @@ namespace SWMSoftMockUp3.Models
         public string LocationDescription { get; set; }
         public string NearestIntersection { get; set; }
         public string Address { get; set; }
+        public ProgressStatus.Status Status { get; set; }
         public int YearBuilt { get; set; }
         public int Easting { get; set; }
         public int Northing { get; set; }

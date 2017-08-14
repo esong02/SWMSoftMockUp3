@@ -30,23 +30,6 @@ namespace SWMSoftMockUp3.Views
 			populateGridView(maxRowCount, maxColumnCount);
 
 		}
-        /*
-		async void OnCallLocationMapPage()
-		{
-			AssetLocation location = new AssetLocation
-			{
-				TaskId = 5,
-				address = "Sample"
-			};
-			await Navigation.PushAsync(new LocationMapPage(location));
-		}
-
-
-		void MapView_Tapped(object sender, System.EventArgs e)
-		{
-			OnCallLocationMapPage();
-		}
-        */
 
 		void OpenOptionWheelDialog()
 		{
@@ -96,7 +79,6 @@ namespace SWMSoftMockUp3.Views
 
 
 		void Inspection_Tapped(object sender, System.EventArgs e)
-		//-------------------------------------------------------------
 		{
 			var item = sender as ImageButton;
             OnCallTaskPage();
@@ -109,7 +91,6 @@ namespace SWMSoftMockUp3.Views
         }
 
         void Maintenance_Tapped(object sender, System.EventArgs e)
-		//-------------------------------------------------------------
 		{
             OnCallMaintenancePage();
 
@@ -122,9 +103,7 @@ namespace SWMSoftMockUp3.Views
         }
 
         void Information_Tapped(object sender, System.EventArgs e)
-		//-------------------------------------------------------------
 		{
-            //DisplayAlert("Information Button","Tapped!","Ok");
 			OnCallInfoPage();
 
 		}
@@ -135,13 +114,11 @@ namespace SWMSoftMockUp3.Views
         }
 
         void Archive_Tapped(object sender, System.EventArgs e)
-		//-------------------------------------------------------------
 		{
             OnCallArchivePage();
 
 		}
-
-
+        
 		void populateGridView(int maxRowCount, int maxColumnCount)
 		{
 			int componentCount = 0;
@@ -164,13 +141,12 @@ namespace SWMSoftMockUp3.Views
 					//If not at the end of the asset list or empty
 					if (componentCount < maxComponentCount)
 					{
-						var componentCell = new StackLayout();
-						componentCell.HorizontalOptions = LayoutOptions.CenterAndExpand;
-						componentCell.VerticalOptions = LayoutOptions.StartAndExpand;
-						componentCell.Margin = new Thickness(5, 5, 5, 5);
-						componentCell.Orientation = StackOrientation.Vertical;
+                        var componentCell = new AbsoluteLayout()
+                        {
+                            Margin = new Thickness(5, 5, 5, 5),
+                        };
 
-						ImageButton iconBtn = new ImageButton
+                        ImageButton iconBtn = new ImageButton
 						{
 							Source = _cList[componentCount].IconImageURL,
 							Aspect = Aspect.AspectFit,
@@ -189,20 +165,57 @@ namespace SWMSoftMockUp3.Views
 
 						iconBtn.GestureRecognizers.Add(tapGestureRecognizer);
 
-						componentCell.Children.Add(iconBtn);
-						componentCell.Children.Add(new Label
-						{
-							Text = _cList[componentCount].Name,
-							FontSize = 12,
-							VerticalOptions = LayoutOptions.StartAndExpand,
-							HorizontalOptions = LayoutOptions.CenterAndExpand,
-							HorizontalTextAlignment = TextAlignment.Center,
-							LineBreakMode = LineBreakMode.WordWrap,
-							TextColor = Color.White,
+                        AbsoluteLayout.SetLayoutBounds(iconBtn, new Rectangle(0.0, 0.0, 1.0, 0.75));
+                        AbsoluteLayout.SetLayoutFlags(iconBtn, AbsoluteLayoutFlags.All);
+                        componentCell.Children.Add(iconBtn);
 
-						});
+                        Label iconLabel = new Label
+                        {
+                            Text = _cList[componentCount].Name,
+                            FontSize = 12,
+                            VerticalOptions = LayoutOptions.StartAndExpand,
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            LineBreakMode = LineBreakMode.WordWrap,
+                            TextColor = Color.White,
 
-						AssetGrid.Children.Add(componentCell, rowPosition, columnPosition);
+                        };
+
+                        AbsoluteLayout.SetLayoutBounds(iconLabel, new Rectangle(0.0, 1.0, 1.0, 0.25));
+                        AbsoluteLayout.SetLayoutFlags(iconLabel, AbsoluteLayoutFlags.All);
+                        componentCell.Children.Add(iconLabel);
+
+                        string progressIconLink = "";
+
+                        if (_cList[componentCount].Status == ProgressStatus.Status.Complete)
+                        {
+                            progressIconLink = "Complete.png";
+                        }
+                        else if (_cList[componentCount].Status == ProgressStatus.Status.Pending)
+                        {
+                            progressIconLink = "Pending.png";
+                        }
+                        else if (_cList[componentCount].Status == ProgressStatus.Status.Incomplete)
+                        {
+                            progressIconLink = "Incomplete.png";
+                        }
+                        else
+                        {
+                            progressIconLink = "Pending.png";
+                        }
+
+                        Image progressIcon = new Image
+                        {
+                            Source = progressIconLink,
+                            Aspect = Aspect.AspectFit
+                        };
+
+                        AbsoluteLayout.SetLayoutBounds(progressIcon, new Rectangle(1.0, 0.0, 0.4, 1.0));
+                        AbsoluteLayout.SetLayoutFlags(progressIcon, AbsoluteLayoutFlags.All);
+
+                        componentCell.Children.Add(progressIcon);
+
+                        AssetGrid.Children.Add(componentCell, rowPosition, columnPosition);
 						componentCount++;
 
 					}

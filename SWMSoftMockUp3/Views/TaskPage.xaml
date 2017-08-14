@@ -2,125 +2,143 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
     xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
     x:Class="SWMSoftMockUp3.Views.TaskPage"
     BackgroundColor = "Blue">
 	<ContentPage.Content>
         <StackLayout>
-            <StackLayout
-                x:Name="MapBar"
-                VerticalOptions = "Start"
-                Orientation="Horizontal"
-                HeightRequest = "60"
-                BackgroundColor="White">
-                <Label 
-                    Text = "Path"
-                    TextColor = "Black"
-                    Margin = "20,0,0,0"
-                    HorizontalOptions = "StartAndExpand"
-                    VerticalOptions = "CenterAndExpand" />
-                <customControl:ImageButton
-                    x:Name="MapIcon"
-                    WidthRequest = "50"
-                    HeightRequest = "50"
-                    Margin = "0,0,10,0"
-                    Source = "location_icon1.png"
-                    HorizontalOptions = "EndAndExpand"
-                    VerticalOptions = "CenterAndExpand">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Tapped = "MapView_Tapped"
-                            NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
-            </StackLayout>
+            <template:MapHeader
+                VerticalOptions="Start"
+                HorizontalOptions="FillAndExpand"/>
 
-            <Label
-                Text = "Inspection Form"
-                TextColor = "White"
-                FontSize = "20"
-                FontAttributes = "Bold"
-                Margin = "30,10,0,10"
-                VerticalOptions ="Start" />
+            <Grid
+                x:Name="InspectionHeader"
+                VerticalOptions="Start"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="Transparent"
+                Margin="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Text = "Inspection Form"
+                    TextColor = "White"
+                    FontSize = "Medium"
+                    Margin="5,0,0,0"
+                    FontAttributes = "Bold"
+                    VerticalOptions ="Start" />
+
+                <Image
+                    Source="Pending.png"
+                    Aspect="AspectFit"
+                    Grid.Row="0"
+                    Grid.Column="3" />
+
+                <Image
+                    Source="Incomplete.png"
+                    Aspect="AspectFit"
+                    Grid.Row="0"
+                    Grid.Column="4" />
+
+                <Image
+                    Source="Complete.png"
+                    Aspect="AspectFit"
+                    Grid.Row="0"
+                    Grid.Column="5" />
+                
+            </Grid>
+            
             <Grid
                 VerticalOptions = "Start"
                 HorizontalOptions = "FillAndExpand"
                 BackgroundColor = "White"
-                Margin = "10,10,10,10"
+                Margin = "10,0,10,0"
                 Padding = "10,10,10,10"
                 x:Name = "AssetGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height = "Auto" />
-                    <RowDefinition Height = "Auto" />
-                    <RowDefinition Height = "Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
                     <ColumnDefinition Width = "*" />
                 </Grid.ColumnDefinitions>
 
                 <Label
-                    Margin = "10,10,0,10"
+                    Margin = "10,0,10,0"
                     Text = "TASK: Description of the action to be taken will be listed here."
                     LineBreakMode = "WordWrap" 
                     Grid.Row = "0"
                     Grid.Column = "0"
-                    Grid.ColumnSpan = "5"/>
+                    Grid.ColumnSpan = "6"/>
 
-                <Button
-                    Text = "-"
-                    Grid.Row = "0"
-                    Grid.Column = "5" />
+            </Grid>
+
+            <Grid
+                x:Name="Ratingbar"
+                VerticalOptions="Start"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="White"
+                Padding="10,10,10,10"
+                Margin="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
                 <Label
                     Margin = "10,0,0,0"
                     Text = "RATE:"
-                    Grid.Row = "1"
-                    Grid.Column = "0" />
+                    Grid.Row = "0"
+                    Grid.Column = "0"
+                    Grid.ColumnSpan="2"/>
 
                 <Label
                     Text = "1"
                     HorizontalTextAlignment = "Center"
                     Grid.Row = "1"
-                    Grid.Column = "1"/>
+                    Grid.Column = "0"/>
 
                 <Label
                     Text = "2"
                     HorizontalTextAlignment = "Center"
                     Grid.Row = "1"
-                    Grid.Column = "2"/>
+                    Grid.Column = "1"/>
 
                 <Label
                     Text = "3"
                     HorizontalTextAlignment = "Center"
                     Grid.Row = "1"
-                    Grid.Column = "3"/>
+                    Grid.Column = "2"/>
 
                 <Label
                     Text = "4"
                     HorizontalTextAlignment = "Center"
                     Grid.Row = "1"
-                    Grid.Column = "4"/>
+                    Grid.Column = "3"/>
 
                 <Label
                     Text = "5"
                     HorizontalTextAlignment = "Center"
                     Grid.Row = "1"
-                    Grid.Column = "5"/>
+                    Grid.Column = "4"/>
 
                 <Label
                     Text = "Click here for Rating Legend"
                     FontSize = "12"
                     HorizontalTextAlignment = "End"
                     Grid.Row = "3"
-                    Grid.Column = "3"
+                    Grid.Column = "1"
                     Grid.ColumnSpan = "3"/>
-                
+
             </Grid>
 
             <StackLayout

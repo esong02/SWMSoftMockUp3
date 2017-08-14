@@ -22,39 +22,6 @@
                 AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,0.12"
                 AbsoluteLayout.LayoutFlags="All"/>
 
-            <!--StackLayout
-                x:Name="MapBar"
-                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,0.12"
-                AbsoluteLayout.LayoutFlags = "All"
-                Orientation="Horizontal"
-                HeightRequest = "60"
-                BackgroundColor="White">
-                <Label 
-                    Text = "Path"
-                    TextColor = "Black"
-                    Margin = "20,0,0,0"
-                    HorizontalOptions = "StartAndExpand"
-                    VerticalOptions = "CenterAndExpand" />
-                <customControl:ImageButton
-                    x:Name="MapIcon"
-                    WidthRequest = "50"
-                    HeightRequest = "50"
-                    Margin = "0,0,20,0"
-                    Source = "location_icon1.png"
-                    HorizontalOptions = "EndAndExpand"
-                    VerticalOptions = "CenterAndExpand" >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Tapped = "MapView_Tapped"
-                            NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
-            </-->
-           
-
-            <!--AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,1.0"
-                AbsoluteLayout.LayoutFlags="All"-->
-            
             <ScrollView
                 x:Name = "GridContainer"
                 Margin = "0,80,0,0"
@@ -197,10 +164,7 @@
                 </StackLayout.GestureRecognizers>
             </StackLayout>
 
-                
         </AbsoluteLayout>
 
-
-        
 	</ContentPage.Content>
 </ContentPage>

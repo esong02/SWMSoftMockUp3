@@ -9,6 +9,7 @@ namespace SWMSoftMockUp3.Models
         public string IconImageURL { get; set; }
         public bool IsIncomplete { get; set; }
         public string Comments { get; set; }
+        public ProgressStatus.Status Status { get; set; }
         public string PhotoURL { get; set; }
         public bool HasPhoto { get; set; }
         public string Icon { get; set; }
