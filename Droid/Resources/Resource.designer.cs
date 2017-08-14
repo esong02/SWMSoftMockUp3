@@ -2269,8 +2269,8 @@ namespace SWMSoftMockUp3.Droid
 			// aapt resource value: 0x7f0200b7
 			public const int NoteIcon = 2130837687;
 			
-			// aapt resource value: 0x7f0200bd
-			public const int notification_template_icon_bg = 2130837693;
+			// aapt resource value: 0x7f0200be
+			public const int notification_template_icon_bg = 2130837694;
 			
 			// aapt resource value: 0x7f0200b8
 			public const int Pending = 2130837688;
@@ -2286,6 +2286,9 @@ namespace SWMSoftMockUp3.Droid
 			
 			// aapt resource value: 0x7f0200bc
 			public const int SplashScreen3 = 2130837692;
+			
+			// aapt resource value: 0x7f0200bd
+			public const int SplashScreen4 = 2130837693;
 			
 			static Drawable()
 			{

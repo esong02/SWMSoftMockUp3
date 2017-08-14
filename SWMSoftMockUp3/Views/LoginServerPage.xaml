@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     Title="SWMSoft"
     BackgroundImage="SplashScreen3.png"
-    x:Class="SWMSoftMockUp3.Views.Templates.LoginServerPage">
+    x:Class="SWMSoftMockUp3.Views.LoginServerPage">
 	<ContentPage.Content>
         <AbsoluteLayout
             BackgroundColor="#30d3d3d3">

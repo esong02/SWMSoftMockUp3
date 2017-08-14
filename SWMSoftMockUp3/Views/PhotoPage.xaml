@@ -148,7 +148,7 @@
                     Grid.Row = "5"
                     Grid.Column = "4"
                     Grid.ColumnSpan = "2"
-                    Text = "Add Gallery"
+                    Text = "Gallery"
                     HorizontalOptions = "CenterAndExpand" />
                 
             </Grid>

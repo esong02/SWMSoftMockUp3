@@ -12,8 +12,8 @@ namespace SWMSoftMockUp3
             InitializeComponent();
             //MainPage = new ServerPage();
             //MainPage = new HomePage();
-            MainPage = new NavigationPage(new ServerPage());
-            //MainPage = new NavigationPage(new LoginServerPage());
+            //MainPage = new NavigationPage(new ServerPage());
+            MainPage = new NavigationPage(new LoginServerPage());
             //MainPage = new NavigationPage(new LoginPage());
         }
 

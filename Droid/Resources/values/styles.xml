@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<style name="splashscreen" parent="Theme.AppCompat.Light.NoActionBar">
-	    <item name="android:windowBackground">@drawable/SplashScreen3</item>
+	    <item name="android:windowBackground">@drawable/SplashScreen4</item>
 	    <item name="android:windowNoTitle">true</item>
 	    <item name="android:windowIsTranslucent">false</item>
 	    <item name="android:windowIsFloating">false</item>

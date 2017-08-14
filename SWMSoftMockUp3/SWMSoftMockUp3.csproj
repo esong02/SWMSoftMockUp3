@@ -59,7 +59,7 @@
     <EmbeddedResource Include="Views\PhotoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Templates\LoginServerPage.xaml">
+    <EmbeddedResource Include="Views\LoginServerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Templates\HeaderPage.xaml">
@@ -144,7 +144,7 @@
     <Compile Include="Views\Templates\ContentBox.xaml.cs">
       <DependentUpon>ContentBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Templates\LoginServerPage.xaml.cs">
+    <Compile Include="Views\LoginServerPage.xaml.cs">
       <DependentUpon>LoginServerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Templates\HeaderPage.xaml.cs">
