@@ -41,9 +41,6 @@
     <EmbeddedResource Include="Views\AssetListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\TaskItemPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ComponentListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -117,9 +114,6 @@
     </Compile>
     <Compile Include="Views\PhotoGallery.xaml.cs">
       <DependentUpon>PhotoGallery.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TaskItemPage.xaml.cs">
-      <DependentUpon>TaskItemPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ComponentListPage.xaml.cs">
       <DependentUpon>ComponentListPage.xaml</DependentUpon>

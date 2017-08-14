@@ -30,7 +30,12 @@
                 HorizontalTextAlignment = "Start"
                 Margin = "10,5,10,5"
                 FontSize = "16" />
-            
+
+            <Label
+                Text="Directions: The location address and step by step navigation to the location would appear here via Google Maps"
+                LineBreakMode="WordWrap" />
+
+
         </StackLayout>
 	</ContentPage.Content>
 </ContentPage>

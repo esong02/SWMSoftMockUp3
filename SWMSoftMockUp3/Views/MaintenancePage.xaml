@@ -4,58 +4,123 @@
              xmlns:template="clr-namespace:SWMSoftMockUp3.Views.Templates"
              x:Class="SWMSoftMockUp3.Views.MaintenancePage">
     <ContentPage.Content>
-        <StackLayout
-            BackgroundColor="Blue">
-
-            <template:MapHeader />
-
-            <Label
-                Text="Maintenance"
-                TextColor="White"
-                FontAttributes="Bold"
-                FontSize="Medium"
-                Margin="30,10,0,10" />
-
+        <AbsoluteLayout>
             <StackLayout
-                BackgroundColor="White"
-                Margin="10,10,10,10"
-                Padding="10,10,10,10">
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,1.0"
+                BackgroundColor="Blue">
+
+                <template:MapHeader />
 
                 <Label
-                    Text="This window will display all relevant Asset Maintenance history"
-                    LineBreakMode="WordWrap"
-                    VerticalOptions="StartAndExpand"
-                    HorizontalOptions="FillAndExpand" />
-
-                <Label
-                    Text="Maintenance Reports"
-                    TextColor="Black"
+                    Text="Maintenance"
+                    TextColor="White"
                     FontAttributes="Bold"
                     FontSize="Medium"
-                    HorizontalOptions="CenterAndExpand" />
+                    Margin="30,10,0,10" />
 
-                <Button
-                    Text="Septmember 15, 2017"
-                    TextColor="White"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="10,0,10,0"
-                    BackgroundColor="LightBlue" />
+                <StackLayout
+                    BackgroundColor="White"
+                    Margin="10,10,10,10"
+                    Padding="10,10,10,10">
 
-                <Button
-                    Text="Download Older Data"
-                    TextColor="White"
-                    HorizontalOptions="FillAndExpand"
-                    Margin="10,0,10,0"
-                    BackgroundColor="Gray" />
+                    <Label
+                        Text="This window will display all relevant Asset Maintenance history"
+                        LineBreakMode="WordWrap"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="FillAndExpand" />
 
-                <Button
-                    BackgroundColor="Transparent"
-                    Text="Send Maintenance Note"
-                    HorizontalOptions="CenterAndExpand"
-                    TextColor="Black" />
+                    <Label
+                        Text="Maintenance Reports"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand" />
 
-            </StackLayout>
+                    <Button
+                        Text="Septmember 15, 2017"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="10,0,10,0"
+                        BackgroundColor="LightBlue" />
+
+                    <Button
+                        Text="Download Older Data"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Margin="10,0,10,0"
+                        BackgroundColor="Gray" />
+
+                    <Button
+                        BackgroundColor="Transparent"
+                        Text="Send Maintenance Note"
+                        HorizontalOptions="CenterAndExpand"
+                        Clicked="SendMaintenanceNote_Clicked"
+                        TextColor="Black" />
+
+                </StackLayout>
             
-        </StackLayout>
+            </StackLayout>
+
+            <StackLayout
+                x:Name="MaintenanceDialogScreen"
+                IsVisible = "false"
+                AbsoluteLayout.LayoutFlags = "All"
+                AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
+                BackgroundColor = "#60000000">
+
+                <StackLayout
+                    BackgroundColor = "White"
+                    VerticalOptions = "StartAndExpand"
+                    HorizontalOptions = "CenterAndExpand"
+                    Orientation = "Vertical"
+                    HeightRequest = "300"
+                    WidthRequest = "350"
+                    Margin = "0,30,0,0">
+
+                    <Label
+                        Text = "Comment"
+                        TextColor = "Black"
+                        Margin="10,10,0,0"
+                        VerticalOptions = "Start"
+                        FontAttributes = "Bold"
+                        FontSize = "Large" />
+
+                    <Editor
+                        Text = "Tapping in this window will open a keyboard allowing the user to write/send a note."
+                        TextColor = "Black"
+                        VerticalOptions = "FillAndExpand"
+                        HorizontalOptions = "FillAndExpand"
+                        Margin = "10,10,10,10"
+                        HeightRequest = "80" />
+
+                    <StackLayout
+                        Orientation = "Horizontal">
+
+                        <Button
+                            HorizontalOptions = "EndAndExpand"
+                            Margin = "0,10,0,10"
+                            Text = "Cancel"
+                            TextColor = "Black"
+                            Clicked = "CommentCancel_Clicked"/>
+
+                        <Button
+                            HorizontalOptions = "End"
+                            Margin = "0,10,10,10"
+                            Text = "Send"
+                            TextColor = "Black"
+                            Clicked = "CommentSave_Clicked" />
+
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped = "CloseDialog_Tapped"
+                        NumberOfTapsRequired = "1" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

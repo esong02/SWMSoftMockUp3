@@ -16,5 +16,29 @@ namespace SWMSoftMockUp3.Views
         {
             InitializeComponent();
         }
+
+        private void SendMaintenanceNote_Clicked(object sender, EventArgs e)
+        {
+            MaintenanceDialogScreen.IsVisible = true;
+        }
+
+        void CommentCancel_Clicked(object sender, System.EventArgs e)
+        {
+
+            MaintenanceDialogScreen.IsVisible = false;
+        }
+
+        void CommentSave_Clicked(object sender, System.EventArgs e)
+        {
+
+            MaintenanceDialogScreen.IsVisible = false;
+        }
+
+        void CloseDialog_Tapped(object sender, System.EventArgs e)
+        {
+
+            MaintenanceDialogScreen.IsVisible = false;
+        }
+
     }
 }
