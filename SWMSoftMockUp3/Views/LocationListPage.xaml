@@ -37,11 +37,15 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid
+
+                            <Frame
+                                CornerRadius="20"
                                 BackgroundColor = "White"
                                 HorizontalOptions = "FillAndExpand"
                                 Margin = "15,5,15,5"
                                 Padding = "5,5,5,5">
+                            
+                            <Grid>
                                 
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height = "Auto" />
@@ -113,7 +117,9 @@
                                     Aspect="AspectFit"/>
 
                             </Grid>
-  
+
+                            </Frame>
+
                         </ViewCell>   
                     </DataTemplate>
                 </ListView.ItemTemplate>

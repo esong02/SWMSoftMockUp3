@@ -3,20 +3,25 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     Title="SWMSoft"
-    BackgroundImage="SplashScreen3.png"
+    BackgroundImage="SplashScreen4.png"
     x:Class="SWMSoftMockUp3.Views.LoginServerPage">
 	<ContentPage.Content>
+        <ScrollView>
+            
+        
         <AbsoluteLayout
             BackgroundColor="#30d3d3d3">
 
-            <StackLayout
+            <Frame
                 IsVisible="true"
+                CornerRadius="20"
                 AbsoluteLayout.LayoutFlags = "All"
                 AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
                 x:Name="LoginBox"
-                Orientation="Vertical"
                 Margin="40,40,40,40"
                 BackgroundColor="White" >
+                <StackLayout
+                    Orientation="Vertical">
 
                 <Image 
                     Source="key_icon.png"
@@ -68,15 +73,18 @@
                     FontSize="14"
                     HorizontalTextAlignment="Center" />
             </StackLayout>
+            </Frame>
 
-            <StackLayout
+            <Frame
                 IsVisible="false"
                 AbsoluteLayout.LayoutFlags = "All"
                 AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
                 Margin = "40,40,40,40"
                 x:Name="ServerBox"
-                Orientation="Vertical"
+                CornerRadius="20"
                 BackgroundColor="White" >
+            <StackLayout
+                Orientation="Vertical" >
 
                 <Image 
                     Source="key_icon.png"
@@ -96,13 +104,23 @@
                     FontAttributes="Bold"
                     x:Name="ServerID" />
 
-                <Editor 
-                    Text="Disabled. Press Connect to proceed."
+                <Frame
                     Margin="20,0,20,0"
-                    x:Name="ServerText"
-                    HeightRequest="100"
+                    OutlineColor="Blue"
+                    BackgroundColor = "#F0d3d3d3"
                     HorizontalOptions="FillAndExpand"
-                    BackgroundColor = "#F0d3d3d3"/>
+                    HeightRequest="60"
+                    CornerRadius="10">
+                    <Editor 
+                        Margin="0,-20,0,-20"
+                        Text="Disabled. Press Connect to proceed."
+                        BackgroundColor="Transparent"
+                        VerticalOptions="FillAndExpand"
+                        x:Name="ServerText"
+                        HorizontalOptions="FillAndExpand"
+                        />
+                </Frame>
+
 
                 <Button
                     Text="Connect"
@@ -116,8 +134,9 @@
                     VerticalOptions="CenterAndExpand"/>
 
             </StackLayout>
-
+            </Frame>
 
         </AbsoluteLayout>
-	</ContentPage.Content>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

@@ -6,9 +6,10 @@
     xmlns:customControl="clr-namespace:SWMSoftMockUp3.CustomControls;assembly=SWMSoftMockUp3"
     BackgroundColor = "Blue"
     x:Class="SWMSoftMockUp3.Views.PhotoPage">
-	<ContentPage.Content>
-        <AbsoluteLayout>
-            
+    <ContentPage.Content>
+        <AbsoluteLayout
+            x:Name="Container">
+
             <template:MapHeader
                 AbsoluteLayout.LayoutBounds="0.0,0.0,1.0,0.1"
                 AbsoluteLayout.LayoutFlags="All"/>
@@ -24,40 +25,45 @@
                 FontSize = "20"
                 FontAttributes = "Bold" />
 
-            <Grid
+
+            <Frame
+                CornerRadius="10"
+                x:Name="GalleryBox"
                 AbsoluteLayout.LayoutFlags = "All"
                 AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
                 BackgroundColor = "White"
                 Margin = "10,100,10,10"
-                Padding = "10,10,10,10"
-                x:Name = "AssetGrid">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height = "Auto" />
-                    <RowDefinition Height = "Auto" />
-                    <RowDefinition Height = "Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                    <ColumnDefinition Width = "*" />
-                </Grid.ColumnDefinitions>
+                Padding = "10,10,10,10">
 
-                <Image
+                <Grid
+                x:Name = "AssetGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "Auto" />
+                        <RowDefinition Height = "Auto" />
+                        <RowDefinition Height = "Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                        <ColumnDefinition Width = "*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
                     Grid.Row = "0"
                     Grid.Column = "0"
                     Grid.ColumnSpan = "6"
                     Source = "Sample_Photo.png" >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped = "ZoomImage_Tapped"
                             NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </Image>
+                        </Image.GestureRecognizers>
+                    </Image>
 
-                <Label
+                    <Label
                     Text = "Last Inspection Photo 8/30/17"
                     HorizontalOptions = "CenterAndExpand"
                     LineBreakMode = "WordWrap"
@@ -65,93 +71,95 @@
                     Grid.Column = "0"
                     Grid.ColumnSpan = "6" />
 
-                <Image
+                    <Image
                     Grid.Row = "2"
                     Grid.Column = "0"
                     Grid.ColumnSpan = "6"
                     Source = "Sample_Photo.png" >
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped = "ZoomImage_Tapped"
                             NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </Image>
+                        </Image.GestureRecognizers>
+                    </Image>
 
-                <Label
+                    <Label
                     Text = "Today's Date"
                     HorizontalTextAlignment = "Start"
                     Grid.Row = "3"
                     Grid.Column = "1"
                     Grid.ColumnSpan = "2"/>
 
-                <Label
+                    <Label
                     Text = "Delete Photo"
                     HorizontalTextAlignment = "End"
                     Grid.Row = "3"
                     Grid.Column = "3"
                     Grid.ColumnSpan = "2" />
 
-                <customControl:ImageButton
+                    <customControl:ImageButton
                     Grid.Row = "4"    
                     Grid.Column = "0"
                     Grid.ColumnSpan = "2"
                     Aspect = "AspectFit"
                     Source = "NoteIcon.png">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped = "AddNote_Tapped"
                             NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
+                        </Image.GestureRecognizers>
+                    </customControl:ImageButton>
 
-                <customControl:ImageButton
+                    <customControl:ImageButton
                     Grid.Row = "4"    
                     Grid.Column = "2"
                     Grid.ColumnSpan = "2"
                     Aspect = "AspectFit"
                     Source = "camera_Icon.png">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped = "AddPhoto_Tapped"
                             NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
+                        </Image.GestureRecognizers>
+                    </customControl:ImageButton>
 
-                <customControl:ImageButton
+                    <customControl:ImageButton
                     Grid.Row = "4"    
                     Grid.Column = "4"
                     Grid.ColumnSpan = "2"
                     Aspect = "AspectFit"
                     Source = "Archive1.png">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
                             Tapped = "Gallery_Tapped"
                             NumberOfTapsRequired = "1" />
-                    </Image.GestureRecognizers>
-                </customControl:ImageButton>
+                        </Image.GestureRecognizers>
+                    </customControl:ImageButton>
 
-                <Label
+                    <Label
                     Grid.Row = "5"
                     Grid.Column = "0"
                     Grid.ColumnSpan = "2"
                     Text = "Add Note"
                     HorizontalOptions = "CenterAndExpand" />
 
-                <Label
+                    <Label
                     Grid.Row = "5"
                     Grid.Column = "2"
                     Grid.ColumnSpan = "2"
                     Text = "Add Photo"
                     HorizontalOptions = "CenterAndExpand" />
 
-                <Label
+                    <Label
                     Grid.Row = "5"
                     Grid.Column = "4"
                     Grid.ColumnSpan = "2"
                     Text = "Gallery"
                     HorizontalOptions = "CenterAndExpand" />
-                
-            </Grid>
+
+                </Grid>
+
+            </Frame>
 
             <StackLayout
                 x:Name="CommentDialogScreen"
@@ -160,16 +168,18 @@
                 AbsoluteLayout.LayoutBounds = "0.0,0.0,1.0,1.0"
                 BackgroundColor = "#60000000">
 
-                <StackLayout
-                    BackgroundColor = "White"
+                <Frame
+                        CornerRadius="10"
+                        BackgroundColor = "White"
                     VerticalOptions = "StartAndExpand"
                     HorizontalOptions = "CenterAndExpand"
-                    Orientation = "Vertical"
                     HeightRequest = "200"
                     WidthRequest = "350"
                     Margin = "0,30,0,0">
+                    <StackLayout
+                    Orientation = "Vertical">
 
-                    <Label
+                        <Label
                         Text = "Comment"
                         TextColor = "Black"
                         Margin="10,10,0,0"
@@ -177,7 +187,7 @@
                         FontAttributes = "Bold"
                         FontSize = "Large" />
 
-                    <Editor
+                        <Editor
                         Text = "Sample Comment"
                         TextColor = "Black"
                         VerticalOptions = "FillAndExpand"
@@ -185,25 +195,26 @@
                         Margin = "10,10,10,10"
                         HeightRequest = "60" />
 
-                    <StackLayout
+                        <StackLayout
                         Orientation = "Horizontal">
-                        <Button
+                            <Button
                             HorizontalOptions = "EndAndExpand"
                             Margin = "0,10,0,10"
                             Text = "Cancel"
                             TextColor = "Black"
                             Clicked = "CommentCancel_Clicked"/>
 
-                        <Button
+                            <Button
                             HorizontalOptions = "End"
                             Margin = "0,10,10,10"
                             Text = "Save"
                             TextColor = "Black"
                             Clicked = "CommentSave_Clicked" />
-                        
-                    </StackLayout>
 
-                </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
+                </Frame>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped = "CloseDialog_Tapped"
@@ -233,5 +244,5 @@
             </StackLayout>
 
         </AbsoluteLayout>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

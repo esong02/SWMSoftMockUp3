@@ -5,10 +5,10 @@
   <ContentView.Content>
       <StackLayout>
             <Grid
-                x:Name="RatingBar"
-                Padding="10,10,10,10">
+                HeightRequest="60"
+                Padding="10,10,10,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -16,6 +16,75 @@
 
                 <!--Insert Stars -->
 
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Reset_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                
+                <Image
+                    Source="StarUnselected.png"
+                    x:Name="Rate1"
+                    Grid.Row="0"
+                    Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Rating_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image
+                    Source="StarUnselected.png"
+                    x:Name="Rate2"
+                    Grid.Row="0"
+                    Grid.Column="2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Rating_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image
+                    Source="StarUnselected.png"
+                    x:Name="Rate3"
+                    Grid.Row="0"
+                    Grid.Column="3">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Rating_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image
+                    Source="StarUnselected.png"
+                    x:Name="Rate4"
+                    Grid.Row="0"
+                    Grid.Column="4">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Rating_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image
+                    Source="StarUnselected.png"
+                    x:Name="Rate5"
+                    Grid.Row="0"
+                    Grid.Column="5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Rating_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="6"
+                    Text=""/>
 
             </Grid>
       </StackLayout>

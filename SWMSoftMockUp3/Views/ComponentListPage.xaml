@@ -46,13 +46,17 @@
                 AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor = "#60000000">
 
-                <AbsoluteLayout
+                <Frame
+                    VerticalOptions = "CenterAndExpand"
+                    HorizontalOptions = "CenterAndExpand"
+                    BackgroundColor="#F0FFFFFF"
+                    OutlineColor="Transparent"
+                    CornerRadius="165">
+                    <AbsoluteLayout
                     x:Name="OptionWheelLayout"
                     HeightRequest = "300"
                     WidthRequest = "300"
-                    BackgroundColor = "#F0FFFFFF"
-                    VerticalOptions = "CenterAndExpand"
-                    HorizontalOptions = "CenterAndExpand">
+                    BackgroundColor = "Transparent">
 
                     <StackLayout
                         AbsoluteLayout.LayoutBounds = "0.5,0.0,0.35,0.35"
@@ -156,14 +160,14 @@
                     </StackLayout>
                     
                 </AbsoluteLayout>
-
+                </Frame>
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="OptionWheelBlackScreen_Tapped"
                         NumberOfTapsRequired = "1"/>
                 </StackLayout.GestureRecognizers>
             </StackLayout>
-
+            
         </AbsoluteLayout>
 
 	</ContentPage.Content>

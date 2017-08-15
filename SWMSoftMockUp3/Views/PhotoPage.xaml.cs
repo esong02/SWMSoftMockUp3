@@ -58,6 +58,9 @@ namespace SWMSoftMockUp3.Views
         private void ZoomImage_Tapped(object sender, EventArgs e)
         {
             ZoomedImageScreen.IsVisible = true;
+            Container.LowerChild(GalleryBox);
+            //Container.RaiseChild(ZoomedImageScreen);
+            
         }
 
     }
